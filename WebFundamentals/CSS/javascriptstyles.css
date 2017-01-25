@@ -1,0 +1,70 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+a:link {
+ color: #66ffff;
+}
+.wrapper{
+ height: 590px;
+ width: 730px;
+ background-color: #221c69;
+ padding: 15px;
+}
+.header{
+ height: 50px;
+ width: 700px;
+ background-color: red;
+ padding: 15px;
+ margin-bottom: 25px;
+ color: white;
+ border-radius: 15px;
+}
+.navigation{
+ height: 175px;
+ width: 150px;
+ background-color: teal;
+ padding: 25px;
+ font-size: 12px;
+ color: #66ffff;
+ border-radius: 15px;
+}
+.subbullets{
+  margin-left: 50px
+}
+.main_body{
+ position: absolute;
+ margin-top: -230px;
+ margin-left: 250px;
+ display: inline-block;
+ height: 380px;
+ width: 430px;
+ background-color: black;
+ color: white;
+ font-size: 12px;
+ border-radius: 15px;
+ padding: 25px;
+}
+.emphasis{
+ color:purple;
+}
+.term{
+ color:#66ffff;
+ text-decoration: underline;
+}
+.footer{
+ position: absolute;
+ margin-top: 215px;
+ display: inline-block;
+ height: 18px;
+ width: 700px;
+ background-color: gray;
+ color: white;
+ font-size: 12px;
+ border-radius: 15px;
+ padding: 15px;
+}
+.home{
+ list-style-type: none;
+}
