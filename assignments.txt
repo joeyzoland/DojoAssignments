@@ -1,0 +1,32 @@
+Last login: Mon Jan 23 17:24:22 on ttys000
+Josephs-MacBook-Air:~ josephzoland$ cd desktop
+Josephs-MacBook-Air:desktop josephzoland$ mkdir DojoAssignments
+Josephs-MacBook-Air:desktop josephzoland$ cd DojoAssignments
+Josephs-MacBook-Air:DojoAssignments josephzoland$ mkdir WebFundamentals
+Josephs-MacBook-Air:DojoAssignments josephzoland$ mkdir Python
+Josephs-MacBook-Air:DojoAssignments josephzoland$ mkdir MEAN
+Josephs-MacBook-Air:DojoAssignments josephzoland$ mkdir Ruby
+Josephs-MacBook-Air:DojoAssignments josephzoland$ mkdir IOS
+Josephs-MacBook-Air:DojoAssignments josephzoland$ mkdir netCore
+Josephs-MacBook-Air:DojoAssignments josephzoland$ touch webFundamentals/about.txt
+Josephs-MacBook-Air:DojoAssignments josephzoland$ touch Python/about.txt
+Josephs-MacBook-Air:DojoAssignments josephzoland$ touch Mean/about.txt
+Josephs-MacBook-Air:DojoAssignments josephzoland$ touch Ruby/about.txt
+Josephs-MacBook-Air:DojoAssignments josephzoland$ touch IOS/about.txt
+Josephs-MacBook-Air:DojoAssignments josephzoland$ touch netCore/about.txt
+Josephs-MacBook-Air:DojoAssignments josephzoland$ pwd
+/Users/josephzoland/desktop/DojoAssignments
+Josephs-MacBook-Air:DojoAssignments josephzoland$ cd WebFundamentals
+Josephs-MacBook-Air:WebFundamentals josephzoland$ mkdir Git
+Josephs-MacBook-Air:WebFundamentals josephzoland$ mkdir HTML
+Josephs-MacBook-Air:WebFundamentals josephzoland$ mkdir CSS
+Josephs-MacBook-Air:WebFundamentals josephzoland$ mkdir Javascript
+Josephs-MacBook-Air:WebFundamentals josephzoland$ touch Git/about.txt
+Josephs-MacBook-Air:WebFundamentals josephzoland$ touch HTML/about.txt
+Josephs-MacBook-Air:WebFundamentals josephzoland$ touch CSS/about.txt
+Josephs-MacBook-Air:WebFundamentals josephzoland$ touch Javascript/about.txt
+Josephs-MacBook-Air:WebFundamentals josephzoland$ cd HTML
+Josephs-MacBook-Air:HTML josephzoland$ touch indentation.html
+Josephs-MacBook-Air:HTML josephzoland$ ls -R
+about.txt		indentation.html
+Josephs-MacBook-Air:HTML josephzoland$ 
