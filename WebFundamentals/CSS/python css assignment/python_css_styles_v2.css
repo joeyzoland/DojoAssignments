@@ -1,0 +1,137 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper{
+  background-color: #265175;
+  height: 635px;
+  width: 970px;
+  border: 2px solid black;
+}
+.header{
+  display: inline-block;
+  height: 90px;
+  width: 970px;
+}
+.logo{
+  display: inline-block;
+}
+.searchbar{
+  display: inline-block;
+  height: 40px;
+  width: 250px;
+  background-color: black;
+  position: relative;
+  left: 235px;
+  bottom: 20px;
+}
+.header p{
+  display: inline;
+  position: relative;
+  left: 480px;
+  bottom: 65px;
+  font-size: 12px;
+  color: orange;
+}
+.main_navigation{
+  display: block;
+  height: 40px;
+  width: 700px;
+  margin: auto;
+  background-color: #4A80AB;
+  color: white;
+}
+.main_navigation p{
+  display: inline-block;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.main_content{
+  display: block;
+  height: 250px;
+  width: 700px;
+  margin: auto;
+}
+.main_content_sidebar{
+  display: inline-block;
+  color: white;
+  height: 250px;
+  width: 200px;
+  position: absolute;
+  text-align: center;
+  list-style-position: inside;
+}
+.main_content_text{
+  display: inline-block;
+  height: 250px;
+  width: 496px;
+  position: absolute;
+  left: 342px;
+  text-align: center;
+  color: white;
+}
+.intro{
+  font-size: 12px;
+}
+.zen{
+  font-size: 13px;
+  color: orange;
+}
+.additional_info{
+  display: block;
+  height: 175px;
+  width: 970px;
+  background-color: white;
+}
+.additional_info_contents{
+  height: 175px;
+  width: 700px;
+  margin: auto;
+}
+.additional_info_contents ul li{
+  color: #79ABD5;;
+}
+.additional_info_contents_1{
+  height: 175px;
+  width: 320px;
+  margin-left: 9px;
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+.additional_info_contents_2{
+  height: 175px;
+  width: 320px;
+  margin-left: 40px;
+  display: inline-block;
+  position: absolute;
+  left: 450px;
+  text-align: center;
+}
+.footer{
+  display: block;
+  height: 80px;
+  width: 590px;
+  margin: auto;
+}
+.footer p{
+  margin: auto;
+}
+.footer p span{
+  display: inline;
+  margin-left: 25px;
+  margin-right: 25px;
+  position: relative;
+  top: 35px;
+  color: #79ABD5;
+}
+.copyright{
+  display: inline;
+  position: relative;
+  top: 40px;
+  left: 220px;
+  font-size: 10px;
+  color: #79ABD5;
+}
