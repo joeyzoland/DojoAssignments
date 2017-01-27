@@ -1,0 +1,104 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper{
+  height: 820px;
+  width: 970px;
+  background-color: purple;
+}
+.header{
+  height: 80px;
+  width: 960px;
+  padding: 5px;
+  background-color: white;
+}
+.hello{
+  height: 80px;
+  width: 120px;
+  display: inline-block;
+  border: 1px solid #D3D3D3;
+}
+.header p{
+  display: inline;
+  position: relative;
+  bottom: 20px;
+  left: 450px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.navigation{
+  height: 40px;
+  width: 970px;
+}
+.navbutton{
+  display: inline-block;
+  height: 30px;
+  width: 134px;
+  border: 2px solid black;
+  padding-top: 10px;
+  color: blue;
+  text-decoration: underline;
+  text-align: center;
+  background-color: white;
+  position:relative;
+  left: 2px;
+}
+.main_contents{
+  height: 270px;
+  width: 970px;
+  padding-top:15px;
+}
+.database_pic{
+  display: inline-block;
+  height: 220px;
+  width: 460px;
+  border: 8px solid grey;
+  margin: 15px;
+}
+.database_definition{
+  display: inline-block;
+  height: 220px;
+  width: 400px;
+  border: 8px solid grey;
+  background-color: white;
+  vertical-align: top;
+  margin: 15px;
+  margin-left: 25px;
+}
+.database_definition_header{
+  display: inline-block;
+  height: 30px;
+  width: 400px;
+  background-color: #6F6F6F;
+}
+.database_definition_summary{
+  font-weight: bold;
+}
+.additional_contents{
+  height: 400px;
+  width: 970px;
+}
+.pic{
+  height:120px;
+  width:200px;
+}
+.additional_contents div{
+  display:inline-block;
+  height: 370px;
+  width: 200px;
+  background-color: #6F6F6F;
+  vertical-align: top;
+  margin: 19px;
+}
+.subheading{
+  display: inline-block;
+  font-weight: bold;
+  height:30px;
+  width:190px;
+  padding-top: 10px;
+}
+.additional_contents div p{
+  padding-left: 5px;
+  padding-right: 5px;
+}

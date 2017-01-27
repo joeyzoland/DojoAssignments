@@ -1,0 +1,97 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper{
+  height: 635px;
+  width: 970px;
+  background-color: purple;
+}
+.header{
+  height: 80px;
+  width: 960px;
+  background-color: green;
+  padding: 5px;
+}
+.hello{
+  height: 80px;
+  width: 120px;
+  display: inline-block;
+}
+.header p{
+  display: inline;
+  position: relative;
+  bottom: 20px;
+  left: 550px;
+}
+.navigation{
+  height: 40px;
+  width: 970px;
+  background-color: red;
+}
+.navbutton{
+  display: inline-block;
+  height: 40px;
+  width: 130px;
+  border: 2px solid black;
+  padding-top: 10px;
+  text-align: center;
+}
+.main_contents{
+  height: 270px;
+  width: 970px;
+  background-color: black;
+}
+.database_pic{
+  display: inline-block;
+  height: 220px;
+  width: 460px;
+  border: 8px solid grey;
+  margin: 15px;
+}
+.database_definition{
+  display: inline-block;
+  height: 220px;
+  width: 400px;
+  border: 8px solid grey;
+  background-color: pink;
+  vertical-align: top;
+  margin: 15px;
+  margin-left: 25px;
+}
+.database_definition_header{
+  display: inline-block;
+  height: 30px;
+  width: 400px;
+  background-color: #6F6F6F;
+}
+.database_definition_summary{
+  font-weight: bold;
+}
+.additional_contents{
+  height: 400px;
+  width: 970px;
+  background-color: blue;
+}
+.pic{
+  height:120px;
+  width:200px;
+}
+.additional_contents div{
+  display:inline-block;
+  height: 370px;
+  width: 200px;
+  background-color: red;
+  vertical-align: top;
+  margin: 19px;
+}
+.subheading{
+  display: inline-block;
+  font-weight: bold;
+  height:30px;
+  margin-top: 10px;
+}
+.additional_contents div p{
+  margin-left: 5px;
+  margin-right: 5px;
+}
