@@ -82,12 +82,12 @@
   margin-left: 220px;
   margin-top: -180px;
   background-color: blue;
+  border-bottom: 2px solid black;
 }
 .dns{
   display: inline-block;
   width: 400px;
   height: 50px;
-  background-color: teal;
 }
 .dns img{
   display: inline-block;
@@ -97,7 +97,7 @@
 }
 .dns h5{
   display: inline-block;
-  color: blue;
+  color: #26669C;
   position: relative;
   bottom: 5px;
 }
@@ -123,6 +123,7 @@
 .number{
   font-size: 20px;
   font-weight: bold;
+  color: #00C0DD;
 }
 .international{
   margin-left: 5px;
@@ -130,20 +131,55 @@
 }
 .main_content{
   width: 575px;
-  height: 200px;
+  height: 230px;
   display: inline-block;
   position: absolute;
   margin-left: 220px;
   margin-top: -120px;
   background-color: silver;
 }
+.main_content h4{
+  color: #26669C;
+}
+.main_content p{
+  margin-top: 5px;
+  font-size: 12px;
+}
+.main_content ul li{
+  font-size: 12px;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 5px 0px 0px 20px;
+  text-indent: -24px;
+  margin-left: 15px;
+}
+.terms{
+  color: #00C0DD;
+}
+.key_terms{
+  font-weight: bold;
+}
+.main_content img{
+  height:80px;
+  width:auto;
+  margin-top: 10px;
+  margin-left: 160px;
+}
 .main_content2{
   width: 575px;
-  height: 160px;
+  height: 120px;
   position: absolute;
   margin-left: 220px;
-  margin-top: 90px;
+  margin-top: 120px;
   background-color:brown;
+}
+.main_content2 h4{
+  color: #26669C;
+}
+.main_content2 ol li{
+  font-size: 12px;
+  margin-top: 5px;
+  list-style-position: inside;
 }
 .advertisement{
   background-color:blue;
@@ -176,10 +212,38 @@
   color: white;
 }
 .footer{
-  width: 575px;
+  width: 565px;
   height: 120px;
   position: absolute;
   margin-left: 220px;
-  margin-top: -8%;
-  background-color:blue;
+  background-color:red;
+  border-left: 5px solid blue;
+  border-top: 5px solid blue;
+  border-right: 5px solid blue;
+}
+.footer img{
+  display: inline-block;
+  height: 100px;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.footer_text{
+  display: inline-block;
+  height: 100px;
+  width: 430px;
+  background-color: green;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.footer_text h4{
+  color: blue;
+}
+.main_footer_text{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.footer_text p{
+  font-size: 13px;
 }
