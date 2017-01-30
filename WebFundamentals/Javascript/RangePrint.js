@@ -5,3 +5,4 @@ function printRange(a, b, c){
 }
 
 printRange(-2, 10, 3);
+console.log("24"==24)
