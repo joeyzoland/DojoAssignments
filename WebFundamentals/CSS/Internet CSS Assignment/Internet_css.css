@@ -3,12 +3,11 @@
   padding: 0px;
 }
 .wrapper{
-  background-color:pink;
   width:800px;
   height:700px;
+  margin-left: 2px;
 }
 .header{
-  background-color:purple;
   width:800px;
   height:70px;
 }
@@ -20,6 +19,7 @@
 .header h1{
   font-size: 45px;
   margin-left: 90px;
+  font-weight: normal;
   position: relative;
   top: 15px;
 }
@@ -36,10 +36,10 @@
   position: relative;
   top: 5px;
   color: white;
+  font-weight: normal;
 }
 .internet_resources{
-  background-color:orange;
-  width:200px;
+  width:190px;
   height:180px;
   padding-left: 2px;
   border-bottom: 2px solid silver;
@@ -47,7 +47,6 @@
 .internet_resources h4{
   width: 198px;
   height: 20px;
-  background-color: yellow;
   padding-top: 20px;
 }
 .internet_resources h4 span{
@@ -59,7 +58,7 @@
   margin-right: 40px;
 }
 .internet_resources p span{
-  color: #26669C;
+  color: #3D76A6;
 }
 .watch{
   height:27px;
@@ -81,7 +80,6 @@
   position: absolute;
   margin-left: 220px;
   margin-top: -180px;
-  background-color: blue;
   border-bottom: 2px solid black;
 }
 .dns{
@@ -114,7 +112,6 @@
   height: 50px;
   width: 130px;
   left: 440px;
-  background-color: brown;
 }
 .time{
   margin-left: 5px;
@@ -136,7 +133,6 @@
   position: absolute;
   margin-left: 220px;
   margin-top: -120px;
-  background-color: silver;
 }
 .main_content h4{
   color: #26669C;
@@ -170,8 +166,7 @@
   height: 120px;
   position: absolute;
   margin-left: 220px;
-  margin-top: 120px;
-  background-color:brown;
+  margin-top: 115px;
 }
 .main_content2 h4{
   color: #26669C;
@@ -179,10 +174,12 @@
 .main_content2 ol li{
   font-size: 12px;
   margin-top: 5px;
+  margin-left: 10px;
   list-style-position: inside;
+  padding-left: 20px;
+  text-indent: -10px;
 }
 .advertisement{
-  background-color:blue;
   margin-top: 20px;
   margin-left: 2px;
   width:165px;
@@ -215,8 +212,8 @@
   width: 565px;
   height: 120px;
   position: absolute;
+  margin-top: -5px;
   margin-left: 220px;
-  background-color:red;
   border-left: 5px solid blue;
   border-top: 5px solid blue;
   border-right: 5px solid blue;
@@ -232,13 +229,12 @@
   display: inline-block;
   height: 100px;
   width: 430px;
-  background-color: green;
   vertical-align: top;
   margin-top: 10px;
   margin-left: 10px;
 }
 .footer_text h4{
-  color: blue;
+  color: #26669C;
 }
 .main_footer_text{
   margin-top: 5px;
