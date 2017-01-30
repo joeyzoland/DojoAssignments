@@ -1,9 +1,11 @@
 function ForAFewBillion(days){
+  var past = 0;
   var bread = 0.5;
   for(var i = 1; i <= days; i++){
-    bread *= 2
+    bread = (bread * 2);
+    past += bread;
   }
-  console.log("After " + days + " days, he will have made " + bread/100 + " dollars!")
+  console.log("After " + days + " days, he will have made " + past/100 + " dollars!")
 }
 
-ForAFewBillion(4);
+ForAFewBillion(30);
