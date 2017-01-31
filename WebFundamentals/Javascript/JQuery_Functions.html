@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript"; src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("button.click, button.hide").click(function(){
+          $(this).hide()
+        })
+        $("button.show").click(function(){
+          $(".show_message").show()
+        })
+        $("button.toggle").click(function(){
+          $(".toggle_message").toggle()
+        })
+        $("button.slidedown").click(function(){
+          $(this).siblings("p").slideDown()
+          //To cut down on classes, I started using the siblings command from this point forward
+        })
+        $("button.slideup").click(function(){
+          $(this).siblings("p").slideUp()
+        })
+        $("button.slidetoggle").click(function(){
+          $(".slidetoggle_message").slideToggle()
+          //Instead of "this", I used the slidetoggle_message class as a selector here, so it can be used with the addClass section below
+        })
+        $("button.fadein").click(function(){
+          $(this).siblings("p").fadeIn()
+        })
+        $("button.fadeout").click(function(){
+          $(this).siblings("p").fadeOut()
+        })
+        $("button.addclass").click(function(){
+          $(this).siblings("p").addClass("slidetoggle_message")
+        })
+        $("button.before").click(function(){
+          $(".before_message").before("<p>The number 1!</p>")
+          //I used a more specific selector than "this" here, as using this started making my output grow exponentially (it was adding lines
+          //before each line of output (because the output was all "p" tags that met the criteria, just like the message in the HTML below)
+        })
+        $("button.after").click(function(){
+          $(".after_message").after("<p>The number 3!</p>")
+          //See comment above for "before"
+        })
+
+      })
+    </script>
+  </head>
+  <body>
+    <div class = wrapper>
+      <h1>.click</h1>
+      <button class = "click">Click me to hide me</button>
+
+      <h1>.hide</h1>
+      <button class = "hide">Click me to hide me</button>
+
+      <h1>.show</h1>
+      <button class = "show">Click me to show a secret message!</button>
+      <p class = "show_message" style = "display:none">SURPRISE!</p>
+
+      <h1>.toggle</h1>
+      <button class = "toggle">Click me to toggle the below message</button>
+      <p class = "toggle_message">Right now you see me, but after clicking...</p>
+
+      <div>
+        <h1>.slideDown</h1>
+        <button class = "slidedown">Click me to slide down a message!</button>
+        <p style = "display:none">Sliding down...</p>
+      </div>
+
+      <div>
+        <h1>.slideUp</h1>
+        <button class = "slideup">Click me to slide up the below message!</button>
+        <p>See you later...</p>
+      </div>
+
+      <div>
+        <h1>.slideToggle</h1>
+        <button class = "slidetoggle">Click me to toggle-slide the message below!</button>
+        <p class = "slidetoggle_message">Hello! Goodbye!</p>
+      </div>
+
+      <div>
+        <h1>.fadeIn</h1>
+        <button class = "fadein">Click me to fade in a message below!</button>
+        <p class style = "display:none">Hello!</p>
+      </div>
+
+      <div>
+        <h1>.fadeOut</h1>
+        <button class = "fadeout">Click me to fade out the message below!</button>
+        <p>See you later!</p>
+      </div>
+
+      <div>
+        <h1>.addClass</h1>
+        <button class = "addclass">This button adds the "slidetoggle_message" class to the below message, allowing it to then be toggled with the .slideToggle button above!</button>
+        <p>Who keeps toggling me?</p>
+      </div>
+
+      <div>
+        <h1>.before</h1>
+        <button class = "before">This button adds a new message preceding the one below!</button>
+        <p class = "before_message">The number "2" is preceded by...</p>
+      </div>
+
+      <div>
+        <h1>.after</h1>
+        <button class = "after">This button adds a new message following the one below!</button>
+        <p class = "after_message">The number "2" is followed by...</p>
+      </div>
+
+      <h1>.append</h1>
+      <h1>.html</h1>
+      <h1>.attr</h1>
+      <h1>.val</h1>
+      <h1>.text</h1>
+      <h1>.data</h1>
+  </body>
+</html>
