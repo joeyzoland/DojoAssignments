@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script type="text/javascript"; src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Function Experimentation Website</title>
+    <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $("button.click, button.hide").click(function(){
@@ -43,6 +43,59 @@
         $("button.after").click(function(){
           $(".after_message").after("<p>The number 3!</p>")
           //See comment above for "before"
+        })
+        $('button.append').click(function(){
+          $(".append_message").append(" The number 1!")
+        })
+        $('button.html').click(function(){
+          $(this).siblings("div").html("<br><b>Hello!</b>")
+        })
+        $("button.attr").click(function(){
+          $("img").attr("height", "100px")
+        })
+        $("button.val_button").click(function() {
+          var text = $(this).text();
+          $("input").val(text);
+        //I believe this function works by assigning the clicked button's text to the variable text, and then making the input box equal to the variable text
+        })
+        $('button.text').click(function(){
+          $(this).siblings("div").text("<br><b>Hello!</b>")
+        })
+        $('button.data').click(function(){
+          $(this).siblings("div").text("<br><b>Hello!</b>")
+        })
+
+        $( "button" ).click(function() {
+          var value;
+
+          switch ( $( "button" ).index( this ) ) {
+            case 0 :
+              value = $( "div" ).data( "blah" );
+              break;
+            case 1 :
+              $( "div" ).data( "blah", "hello" );
+              value = "Stored!";
+              break;
+            case 2 :
+              $( "div" ).data( "blah", 86 );
+              value = "Stored!";
+              break;
+            case 3 :
+              $( "div" ).removeData( "blah" );
+              value = "Removed!";
+              break;
+          }
+         $( "span" ).text( "" + value );
+         //Note: I copied this from JQuery's database, but doesn't seem like it's functioning optimally.  Will look into this more later.
+
+        })
+        $(".data_button").click(function(){
+          if($(".screen0").attr("src") === "cat1.png"){
+            $(".screen0").attr("src", "ninja2.png")
+          }
+          else{
+            $(".screen0").attr("src", "cat1.png")
+          }
         })
 
       })
@@ -112,11 +165,51 @@
         <p class = "after_message">The number "2" is followed by...</p>
       </div>
 
-      <h1>.append</h1>
-      <h1>.html</h1>
+      <div>
+        <h1>.append</h1>
+        <button class = "append">This button appends text to the below message</button>
+        <p class = "append_message">The number "2" is followed by:</p>
+      </div>
+
+      <div>
+        <h1>.html</h1>
+        <button class = "html">This button adds in some new HTML to the empty div below, including a new line!</button>
+        <div></div>
+      </div>
+
       <h1>.attr</h1>
+      <button class = "attr">This button reduces the size attribute of the image below!</button>
+      <br>
+      <img src = "http://images.clipartpanda.com/mountain-clip-art-mountains_11.gif">
+
       <h1>.val</h1>
-      <h1>.text</h1>
+      <div>
+        <button class = "val_button">1</button>
+        <button class = "val_button">2</button>
+        <button class = "val_button">3</button>
+      </div>
+      <input type="text" value="click a button">
+
+
+      <div>
+        <h1>.text</h1>
+        <button class = "text">FYI, this uses the same input as .html above, but it adds in the text as is, without HTML functionality...</button>
+        <div></div>
+      </div>
+
       <h1>.data</h1>
+      <div>A div</div>
+      <button>Get "blah" from the div</button>
+      <button>Set "blah" to "hello"</button>
+      <button>Set "blah" to 86</button>
+      <button>Remove "blah" from the div</button>
+      <p>The "blah" value of this div is <span>?</span></p>
+
+      <button class = "data_button">
+      <img class = "screen0" alt = "ninja2.png" src = "ninja2.png">
+
+
+
+    </div>
   </body>
 </html>
