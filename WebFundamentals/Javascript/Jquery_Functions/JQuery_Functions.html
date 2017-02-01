@@ -51,7 +51,7 @@
           $(this).siblings("div").html("<br><b>Hello!</b>")
         })
         $("button.attr").click(function(){
-          $("img").attr("height", "100px")
+          $("img").attr("height", "200px")
         })
         $("button.val_button").click(function() {
           var text = $(this).text();
@@ -61,34 +61,6 @@
         $('button.text').click(function(){
           $(this).siblings("div").text("<br><b>Hello!</b>")
         })
-        $('button.data').click(function(){
-          $(this).siblings("div").text("<br><b>Hello!</b>")
-        })
-
-        $( "button" ).click(function() {
-          var value;
-
-          switch ( $( "button" ).index( this ) ) {
-            case 0 :
-              value = $( "div" ).data( "blah" );
-              break;
-            case 1 :
-              $( "div" ).data( "blah", "hello" );
-              value = "Stored!";
-              break;
-            case 2 :
-              $( "div" ).data( "blah", 86 );
-              value = "Stored!";
-              break;
-            case 3 :
-              $( "div" ).removeData( "blah" );
-              value = "Removed!";
-              break;
-          }
-         $( "span" ).text( "" + value );
-         //Note: I copied this from JQuery's database, but doesn't seem like it's functioning optimally.  Will look into this more later.
-
-        })
         $(".data_button").click(function(){
           if($(".screen0").attr("src") === "cat1.png"){
             $(".screen0").attr("src", "ninja2.png")
@@ -96,6 +68,7 @@
           else{
             $(".screen0").attr("src", "cat1.png")
           }
+        //I believe data has practically the same functionality as .attr, although it may be slightly more secure
         })
 
       })
@@ -178,9 +151,9 @@
       </div>
 
       <h1>.attr</h1>
-      <button class = "attr">This button reduces the size attribute of the image below!</button>
+      <button class = "attr">This button increases the size attribute of the image below.  Watch out!</button>
       <br>
-      <img src = "http://images.clipartpanda.com/mountain-clip-art-mountains_11.gif">
+      <img src = "cat1.png">
 
       <h1>.val</h1>
       <div>
@@ -188,7 +161,7 @@
         <button class = "val_button">2</button>
         <button class = "val_button">3</button>
       </div>
-      <input type="text" value="click a button">
+      <input type="text" value="Click an above button!">
 
 
       <div>
@@ -197,17 +170,12 @@
         <div></div>
       </div>
 
-      <h1>.data</h1>
-      <div>A div</div>
-      <button>Get "blah" from the div</button>
-      <button>Set "blah" to "hello"</button>
-      <button>Set "blah" to 86</button>
-      <button>Remove "blah" from the div</button>
-      <p>The "blah" value of this div is <span>?</span></p>
-
-      <button class = "data_button">
-      <img class = "screen0" alt = "ninja2.png" src = "ninja2.png">
-
+      <div>
+        <h1>.data</h1>
+        <button class = "data_button">Click the button to change the image's src attribute with .data, making it flip between two pictures!</button>
+        <br><br>
+        <img class = "screen0" alt = "ninja2.png" src = "ninja2.png">
+      </div>
 
 
     </div>
