@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("button").click(function(){
+          var city = $(".city").val()
+          $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&&appid=e4af20f091514e022228201e1484c4c2", function(res) {
+          var fahrenheit = 9/5*(res.main.temp-273.15)+32
+          var rounded = fahrenheit.toFixed(0)
+          $(".output").html("<h1>" + res.name + "</h1><h3>Temperature: " + rounded + " F</h3>")
+          }, "json");
+        return false})
+      })
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="city"></label>
+      <input type="text" class="city" name="city" value="city">
+      <button>Search Weather</button>
+      <div class = "output"></div>
+    </div>
+  </body>
+</html>
