@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Card</title>
+    <link rel="stylesheet" type="text/css" href="ContactCard.css">
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var i = 0
+        $("button").click(function(){
+          i++
+          // "i" is used as a unique class identifier for each card; it's incremented with the creation of each card
+          var a = $(".first_name").val()
+          var b = $(".last_name").val()
+          var c = $(".description").val()
+          // The first two values are displayed on each card, and the three values are saved as attributes of each card below
+          $(".contact").append("<div class = " + i + "><h3 class = front_info>"+a+" "+b+"</h3><p>Click to Flip Back and Forth!</p></div>")
+          $("." + i).attr("first_name", a)
+          $("." + i).attr("last_name", b)
+          $("." + i).attr("description", c)
+          $("." + i).attr("front_side", "yes")
+          $("." + i).addClass("card")
+          // Each card is given the class "card" on creation, so that each can be clicked to be flipped over
+          // Also, each card is given an attribute of front_side = yes, so that the computer knows it's not flipped yet
+          return false;
+        })
+      })
+      $(document).on("click", ".card", function(){
+        if($(this).attr("front_side")==="yes"){
+          $(this).html("<h5 class = back_info>Description: " + $(this).attr("description") + "</h5>")
+          $(this).attr("front_side", "no")
+        }
+        else{
+          $(this).html("<h3 class = front_info>" + $(this).attr("first_name") + " " + $(this).attr("last_name") + "</h3><p>Click to Flip Back and Forth!</p>")
+          $(this).attr("front_side", "yes")
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <form action="process.php" method="post">
+      <div class = "add">
+        <label>First Name</label>
+        <input type="text" class="first_name" name="first_name" value="">
+        <label>Last Name</label>
+        <input type="text" class="last_name" name="last_name" value="">
+        <label>Description</label>
+        <input type="text" class="description" name="description" value="">
+        <button>Add User</button>
+      </div>
+      <div class = "contact"></div>
+    </form>
+  </body>
+</html>
