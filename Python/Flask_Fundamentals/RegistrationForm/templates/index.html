@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey</title>
+  </head>
+  <body>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form class="user_info" action="/result" method="post">
+        <label>Email:<input type="text" name="email" value=""></label> <br>
+        <label>First Name:<input type="text" name="first_name" value=""></label> <br>
+        <label>Last Name:<input type="text" name="last_name" value=""></label> <br>
+        <label>Password:<input type="text" name="password" value=""></label> <br>
+        <label>Confirm Password:<input type="text" name="confirm" value=""></label> <br>
+        <input type="submit" name="" value="Button">
+    </form>
+
+  </body>
+</html>

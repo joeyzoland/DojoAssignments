@@ -6,6 +6,7 @@ app.secret_key = "number_game"
 def index():
     if "gold" not in session:
         session["gold"] = 0
+        session["activities"] = ""
         print "check 0"
     return render_template("index.html")
 
@@ -13,13 +14,16 @@ def index():
 def process():
     session["last_building"] = request.form['building']
     if request.form['building'] == "farm":
-        session["gold"] = session["gold"] + random.randrange(10, 21)
+        session["newgold"] = random.randrange(10, 21)
     elif request.form["building"] == "cave":
-        session["gold"] += random.randrange(5, 11)
+        session["newgold"] = random.randrange(5, 11)
     elif request.form["building"] == "house":
-        session["gold"] += random.randrange(2, 6)
+        session["newgold"] = random.randrange(2, 6)
     elif request.form["building"] == "casino":
-        session["gold"] += random.randrange(-50, 51)
+        session["newgold"] = random.randrange(-50, 51)
+    session["gold"] += session["newgold"]
+    session["activities"] += "Earned " + str(session["newgold"]) + " from " + session["last_building"] + '\n'
+    print session["activities"]
     return redirect("/")
 
 app.run(debug=True)

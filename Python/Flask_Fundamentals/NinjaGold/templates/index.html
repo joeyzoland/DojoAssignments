@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Ninja Gold</title>
+    <style>
+    p {white-space: pre-wrap;}
+    form{
+      border: 2px solid black;
+      display: inline-block;
+      text-align: center;
+      padding: 5px;
+    }
+    </style>
   </head>
   <body>
     <p>Your Gold</p>
@@ -40,7 +49,7 @@
 
     <p>Activities</p>
     <form>
-      <p>Earned {{session.gold}} gold from the {{session["last_building"]}}!
+      <p class = "whitespace">{{session.activities}}</p>
     </form>
 
   </body>
