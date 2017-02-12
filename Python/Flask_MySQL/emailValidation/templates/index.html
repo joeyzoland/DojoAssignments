@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Email Validator</title>
+  </head>
+  <body>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% if session.error != 2 %}
+      <form class="user_info" action="/result" method="post">
+          <label>Email Address:<input type="text" name="addresses" value=""></label> <br>
+          <input type="submit" name="" value="Submit">
+      </form>
+    {% endif %}
+
+    {% if session.error == 2 %}
+      <h1>Email Addresses Entered</h1>
+      {% for email in emails: %}
+         <p>{{email['addresses']}} {{email['created_formatted']}}</p>
+         <hr>
+      {% endfor %}
+    {% endif %}
+
+  </body>
+</html>

@@ -1,29 +1,57 @@
 from flask import Flask, render_template, request, redirect, flash
+import re
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 app = Flask(__name__)
 app.secret_key = "SuperSecret"
 
 @app.route('/')
 def index():
+    print "created index"
     return render_template("index.html")
 
 @app.route('/result', methods=['post'])
 def create_user():
-   if len(request.form["name"]) < 1:
-      flash("Name is blank")
-      return redirect("/")
-   if len(request.form["comment"]) < 1:
-      flash("Comment is blank")
-      return redirect("/")
-   if len(request.form["comment"]) > 120:
-      flash("Comment section is too large.  Please use 120 characters or less.")
-      return redirect("/")
-   print "Got Post Info"
-   name = request.form["name"]
-   print "Finished name"
-   location = request.form["location"]
-   language = request.form["language"]
-   comment = request.form["comment"]
-   print "Finished Post Info"
-   return render_template("results.html", name = name, location = location, language = language, comment = comment)
+   print "created user"
+   error = 0
+
+   def hasNumbers(inputString):
+      return any(char.isdigit() for char in inputString)
+      #The above function is a helper function
+
+   if len(request.form["email"]) == 0:
+      flash("Please insert a valid email address.")
+      error = 1
+   elif not EMAIL_REGEX.match(request.form['email']):
+      flash("That email address is invalid.  Please try again.")
+      error = 1
+
+   if len(request.form["first_name"]) == 0:
+      flash("Please insert your first name.")
+      error = 1
+   elif hasNumbers(request.form["first_name"]) == True:
+      flash("Please remove all numbers from your first name.")
+      error = 1
+
+   if len(request.form["last_name"]) == 0:
+      flash("Please insert your last name.")
+      error = 1
+   elif hasNumbers(request.form["last_name"]) == True:
+      flash("Please remove all numbers from your last name.")
+      error = 1
+
+   if len(request.form["password"]) == 0:
+      flash("Please create a password.")
+      error = 1
+   elif len(request.form["password"]) < 9:
+      flash("Please create a password with 8 or more characters.")
+      error = 1
+   elif (request.form["password"]) != (request.form["confirm"]):
+      flash("Please verify that both password fields match.")
+      error = 1
+
+   if error == 0:
+      flash("Thanks for submitting your information.")
+
+   return redirect("/")
 
 app.run(debug=True)
