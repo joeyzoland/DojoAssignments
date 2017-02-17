@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <form action = "/process" method = "post">
+      {% csrf_token %}
+      <label for = "name">Your Name:</form>
+      <input type = "text" name = "name" id = "name">
+      <label for = "location">Dojo Location:</label>
+      <select name = "location" id = "location">
+        <option value = "Texas">Texas</option>
+        <option value = "San Jose">San Jose</option>
+        <option value = "Berkeley">Berkeley</option>
+      </select>
+      <label for = "name">Favorite Language:</form>
+      <select name = "language" id = "language">
+        <option value = "Javascript">Javascript</option>
+        <option value = "Python">Python</option>
+        <option value = "Ruby">Ruby</option>
+      </select>
+      <label for = "comment">Comment (optional):</label>
+      <input type = "textarea" name = "comment" id = "name">
+      <input type = "submit" name = "submit" value = "Submit">
+    </form>
+  </body>
+</html>
