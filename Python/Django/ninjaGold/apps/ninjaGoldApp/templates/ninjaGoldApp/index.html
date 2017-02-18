@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style> p {white-space: pre-wrap;} </style>
+  </head>
+  <body>
+    <p>Your Gold: {{request.session.gold}}</p>
+    <form action = "/process" method = "post">
+      {% csrf_token %}
+      <h4>Farm</h4>
+      <p>(earns 10-20 gold)</p>
+      <input type = "hidden" name = "building" value = "farm">
+      <input type = "submit" value = "Find Gold!">
+    </form>
+    <form action = "/process" method = "post">
+      {% csrf_token %}
+      <h4>Cave</h4>
+      <p>(earns 5-10 gold)</p>
+      <input type = "hidden" name = "building" value = "cave">
+      <input type = "submit" value = "Find Gold!">
+    </form>
+    <form action = "/process" method = "post">
+      {% csrf_token %}
+      <h4>House</h4>
+      <p>(earns 2-5 gold)</p>
+      <input type = "hidden" name = "building" value = "house">
+      <input type = "submit" value = "Find Gold!">
+    </form>
+    <form action = "/process" method = "post">
+      {% csrf_token %}
+      <h4>Casino</h4>
+      <p>(earns/takes 0-50 gold)</p>
+      <input type = "hidden" name = "building" value = "casino">
+      <input type = "submit" value = "Find Gold!">
+    </form>
+    <p>{{request.session.comments}}</p>
+  </body>
+</html>
