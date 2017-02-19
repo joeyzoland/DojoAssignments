@@ -14,4 +14,10 @@ def create(request):
     print "completed create"
     return redirect("/")
 def destroy(request, id):
-    return render(request, "coursesApp/destroy.html")
+    context = {
+    "Course" : Courses.objects.get(id=id)
+    }
+    return render(request, "coursesApp/destroy.html", context)
+def remove(request, id):
+    Courses.objects.get(id=id).delete()
+    return redirect("/")

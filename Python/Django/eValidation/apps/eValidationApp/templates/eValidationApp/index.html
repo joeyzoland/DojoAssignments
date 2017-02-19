@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Evalidation</title>
+  </head>
+  <body>
+    {% if messages %}
+      <ul>
+        {% for msg in messages %}
+          <li>  {{msg.message}}  </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <form action = "/validator", method = "post">
+      {% csrf_token %}
+      <label for = "text">Email: </label>
+      <input type = "text" name = "email" value = "">
+      <input type = "submit">
+  </body>
+</html>
