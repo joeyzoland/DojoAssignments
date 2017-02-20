@@ -18,5 +18,11 @@
       <label for = "text">Email: </label>
       <input type = "text" name = "email" value = "">
       <input type = "submit">
+    </form>
+
+      <h2>Email Addresses Entered</h2>
+      {% for email in emails %}
+        <p> {{email.address}} &nbsp; &nbsp; {{email.created_at}} </p>
+      {% endfor %}
   </body>
 </html>

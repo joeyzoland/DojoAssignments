@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import User
+from .models import Email
 
 # Create your views here.
 def index(request):
-    return render(request, "eValidationApp/index.html")
+    context = {
+    "emails": Email.userManager.all()
+    }
+    return render(request, "eValidationApp/index.html", context)
 
 def validator(request):
-    print "made it to validator"
     email = request.POST["email"]
-    print email
-    User.userManager.validator(request, email)
+    output = Email.userManager.validator(request, email)
+    if output[0] == True:
+        Email.userManager.create(address = email)
     return redirect("/")
