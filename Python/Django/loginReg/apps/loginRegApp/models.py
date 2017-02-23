@@ -2,43 +2,75 @@ from __future__ import unicode_literals
 import re
 from django.db import models
 from django.contrib import messages
+import bcrypt
 
 # Create your models here.
 class UserManager(models.Manager):
 
-    def fValidator(self, request, first_name):
+    def validator(self, first_name, last_name, email, password, password2):
+        errorlist = []
+        errordict = {"enterfirst": "Please enter a first name (which is at least 2 characters long).",
+        "lettersfirst": "Please only include letters in your first name.",
+        "enterlast": "Please enter a last name (which is at least 2 characters long).",
+        "letterslast": "Please only include letters in your last name.",
+        "enteremail": "Please enter an email address.", "entervalid": "Please enter a valid email address.",
+        "unique": "That email is already in use.  Please enter a unique email.",
+        "enterpassword": "Please enter a password that is at least 8 characters in length.",
+        "mismatch": "Please make sure that your confirmation password matches your original password."}
+
+        LETTERS_ONLY_REGEX = re.compile(r'^[a-zA-Z]+$')
+
         if len(first_name) < 2:
-            return 1, messages.info(request, "Please enter a first name.")
-        return (0, 0)
+            errorlist.append("enterfirst")
+        elif not LETTERS_ONLY_REGEX.match(first_name):
+            errorlist.append("lettersfirst")
 
-    def lValidator(self, request, last_name):
         if len(last_name) < 2:
-            return 1, messages.info(request, "Please enter a last name.")
+            errorlist.append("enterlast")
+        elif not LETTERS_ONLY_REGEX.match(last_name):
+            errorlist.append("letterslast")
 
-        return (0, 0)
-
-    def eValidator(self, request, email):
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
         if len(email) == 0:
-            return 1, messages.info(request, "Please enter an email address.")
+            errorlist.append("enteremail")
         elif not EMAIL_REGEX.match(email):
-            return 1, messages.info(request, "Please enter a valid email address.")
+            errorlist.append("entervalid")
+        elif len(self.filter(email = email)) > 0:
+            errorlist.append("unique")
 
-        return (0, 0)
+        if len(password) < 8:
+            errorlist.append("enterpassword")
+        elif password != password2:
+            errorlist.append("mismatch")
 
-    def pValidator(self, request, password, password2):
-        if len(password) < 8 and password == password2:
-            return 1, messages.info(request, "Please enter a password that is at least 8 characters in length.")
-        elif len(password) >= 8 and password != password2:
-            return 1, messages.info(request, "Please make sure that your confirmation password matches your original password.")
-        elif len(password) < 8 and password != password2:
-            return 1, messages.info(request, "Please enter a password that is at least 8 characters in length."), messages.info(request, "Please make sure that your confirmation password matches your original password.")
+        if len(errorlist) > 0:
+            return False, errorlist, errordict
+        last = self.create(first_name = first_name, last_name = last_name, email = email, password = bcrypt.hashpw(password.encode(), bcrypt.gensalt()))
+        choice_id = last.id
+        return True, choice_id
 
-        return (0, 0)
 
-    def login(self, request, email, password):
-        print registration.objects.filter(email = email)
-        registration.objects.filter(email = email)
+
+
+    def login(self, email, password):
+        errorlist = []
+        errordict = {"enteremail": "Please enter an email address.",
+        "emismatch": "Your email address does not appear in our database.  If you do not have an account, please register below.",
+        "pmismatch": "Your password does not match our records.  Please try again or create a new account below."}
+        if len(email) == 0:
+            errorlist.append("enteremail")
+        else:
+            try:
+                selection = registration.objects.get(email = email)
+                if bcrypt.hashpw(password.encode(), selection.password.encode()) == selection.password:
+                    choice_id = selection.id
+                    return True, choice_id
+                else:
+                    errorlist.append("pmismatch")
+            except:
+                errorlist.append("emismatch")
+
+        return False, errorlist,errordict
 
 class registration(models.Model):
     first_name = models.CharField(max_length = 45)
