@@ -28,19 +28,19 @@ class UserManager(models.Manager):
 
         if len(errorlist) > 0:
             return False, errorlist, errordict
-        lastuser = self.create(name = username)
-        lastinterest = Interest.objects.create(name = interest)
 
-        blah = lastinterest.users.add(lastuser)
+        currentuser = User.objects.filter(name = username)
+        currentinterest = Interest.objects.filter(name = interest)
+        #If there is no user with the username currently in the database, create one and put it inside a list
+        #so that the data base matches the result of the filter command
+        if len(currentuser) == 0:
+            currentuser = [self.create(name = username)]
+        if len(currentinterest) == 0:
+            currentinterest = [Interest.objects.create(name = interest)]
 
-        # print "lastinterest is" + lastinterest
-        # print "lastuser is" + lastuser
-        # print "lastuser interest is" + lastuser.interest
-        # print "lastinterest user is" + lastinterest.users
-        # print lastuser.interests
-        # blah = lastinterest.users.add(lastuser)
-        # print lastinterest.users.name
-        return True, lastuser, lastinterest
+        currentinterest[0].users.add(currentuser[0])
+
+        return True, currentuser, currentinterest
 
 
 

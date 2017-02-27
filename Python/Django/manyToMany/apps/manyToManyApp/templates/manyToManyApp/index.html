@@ -6,13 +6,6 @@
   </head>
   <body>
 
-    {% for i in users %}
-      <p>{{i.name}} {{i.interests}}</p>
-      {% for j in i.interests.all %}
-            <p>{{j.name}}</p>
-      {% endfor %}
-    {% endfor %}
-
     <form action = "/view_users">
       {% csrf_token %}
       <input type = "submit" value = "View People">

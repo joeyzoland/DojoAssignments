@@ -4,13 +4,22 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
+    return render(request, "manyToManyApp/index.html")
+
+def view_users(request):
     context = {
     "users" : User.objects.all()
     }
-    print context["users"]
-    return render(request, "manyToManyApp/index.html", context)
-def view_users(request):
-    return render(request, "manyToManyApp/view_users.html")
+    return render(request, "manyToManyApp/view_users.html", context)
+
+def view_interests(request):
+    userid = request.POST['id']
+    context = {
+    "name" : User.objects.get(id = userid).name,
+    "interests" : User.objects.get(id = userid).interests.all()
+    }
+    return render(request, "manyToManyApp/view_interests.html", context)
+
 def add(request):
     print "got to the add route"
     username = request.POST["username"]
@@ -22,7 +31,5 @@ def add(request):
         for i in validation[1]:
             messages.error(request, validation[2][i])
     return redirect("/")
-def view_interests(request):
-    return render(request, "manyToManyApp/view_interests.html")
 
 #Write a function for actually rendering the last page
