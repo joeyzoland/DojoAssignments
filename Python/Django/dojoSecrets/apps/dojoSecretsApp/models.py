@@ -50,7 +50,6 @@ class UserManager(models.Manager):
 
 
 
-
     def login(self, email, password):
         errorlist = []
         errordict = {"enteremail": "Please enter an email address.",
@@ -71,9 +70,24 @@ class UserManager(models.Manager):
 
         return False, errorlist,errordict
 
+    def create_secret(self, content, passedcreator):
+        if len(content) == 0:
+            return False
+        else:
+            recentPost = secret.objects.create(content = content, creator = passedcreator)
+            return True
+
 class registration(models.Model):
     first_name = models.CharField(max_length = 45)
     last_name = models.CharField(max_length = 45)
     email = models.EmailField()
     password = models.CharField(max_length = 200)
+    objects = UserManager()
+
+class secret(models.Model):
+    content = models.CharField(max_length = 255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    creator = models.ForeignKey(registration, related_name="creation")
+    liker = models.ManyToManyField(registration, related_name="liked")
     objects = UserManager()
