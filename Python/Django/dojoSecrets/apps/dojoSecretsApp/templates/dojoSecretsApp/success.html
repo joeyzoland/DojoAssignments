@@ -5,6 +5,15 @@
     <title>Dojo Secrets</title>
   </head>
   <body>
+
+    {% if messages %}
+      <ul>
+        {% for msg in messages %}
+          <li>  {{msg.message}}  </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
     <form action = "/logout">
       {% csrf_token %}
       <input type = "submit" value = "Log out">
