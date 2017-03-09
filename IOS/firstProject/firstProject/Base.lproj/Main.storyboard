@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="firstProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rko-yi-i61">
+                                <rect key="frame" x="26" y="20" width="627" height="21"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AMQ-sv-r1n">
+                                        <rect key="frame" x="0.0" y="0.0" width="627" height="20.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tPl-aA-GEp">
+                                                <rect key="frame" x="0.0" y="0.0" width="627" height="20.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bST-fy-ELZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="627" height="20.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the first step of IOS development?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuP-oe-5xt">
+                                                                <rect key="frame" x="0.0" y="0.0" width="627" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="NuP-oe-5xt" secondAttribute="trailing" id="1jp-tD-rOo"/>
+                                                            <constraint firstItem="NuP-oe-5xt" firstAttribute="top" secondItem="bST-fy-ELZ" secondAttribute="top" id="Jdp-Hz-f7b"/>
+                                                            <constraint firstItem="NuP-oe-5xt" firstAttribute="centerX" secondItem="bST-fy-ELZ" secondAttribute="centerX" id="N9f-36-nrv"/>
+                                                            <constraint firstItem="NuP-oe-5xt" firstAttribute="leading" secondItem="bST-fy-ELZ" secondAttribute="leading" id="XZ1-PO-lIM"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDs-6I-r8U">
+                                <rect key="frame" x="24" y="49" width="51" height="30"/>
+                                <state key="normal" title="Answer"/>
+                                <connections>
+                                    <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJP-We-ZWd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQF-pZ-4lz">
+                                <rect key="frame" x="320" y="49" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEf-Rs-2p9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUx-vS-yja">
+                                <rect key="frame" x="16" y="285" width="343" height="97"/>
+                                <string key="text">Create the user interface. As we create the UI, we will get a better understanding of our application. Then we breathe life into our application.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PUx-vS-yja" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8PK-a2-if3"/>
+                            <constraint firstItem="PUx-vS-yja" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BAB-B9-LbJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rko-yi-i61" secondAttribute="trailing" id="JXb-hg-o75"/>
+                            <constraint firstItem="PUx-vS-yja" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MvH-kv-rBH"/>
+                            <constraint firstItem="wQF-pZ-4lz" firstAttribute="baseline" secondItem="VDs-6I-r8U" secondAttribute="baseline" id="R2m-Ky-tlM"/>
+                            <constraint firstItem="VDs-6I-r8U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SE4-1B-ROC"/>
+                            <constraint firstItem="VDs-6I-r8U" firstAttribute="top" secondItem="Rko-yi-i61" secondAttribute="bottom" constant="8" symbolic="YES" id="cba-BQ-CQy"/>
+                            <constraint firstItem="PUx-vS-yja" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iQI-VI-KlT"/>
+                            <constraint firstItem="Rko-yi-i61" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kvw-bm-jX5"/>
+                            <constraint firstItem="Rko-yi-i61" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="l9y-gW-uyt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wQF-pZ-4lz" secondAttribute="trailing" id="rGh-c2-UOa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="PUx-vS-yja" id="TNu-Xc-OIq"/>
+                        <outlet property="questionLabel" destination="NuP-oe-5xt" id="OVj-wv-wAL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274" y="-73"/>
+        </scene>
+    </scenes>
+</document>

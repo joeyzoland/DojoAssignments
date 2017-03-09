@@ -43,16 +43,16 @@ class Deck {
             cards[first2] = cards[second2]
             cards[second2] = temp
         }
-        print (cards)
+//        print (cards)
     }
 }
 
 class Player {
-    var name: String?
+    var name: String
     var hand: [Card] = [Card]()
     init(name: String?) {
-        if name != nil {
-            self.name = name
+        if let unwrappedname = name {
+            self.name = unwrappedname
         }
         else {
             self.name = "Anonymous"
@@ -76,3 +76,17 @@ class Player {
 
 //var myDeck: Deck = Deck()
 //myDeck.shuffle()
+//var Joey: Player = Player(name: "Joey")
+//
+//var anonymous: Player = Player(name: nil)
+//print (anonymous.name)
+//
+//Joey.drawWithDeck(deck:myDeck)
+//Joey.drawWithDeck(deck:myDeck)
+//Joey.drawWithDeck(deck:myDeck)
+//Joey.drawWithDeck(deck:myDeck)
+//Joey.drawWithDeck(deck:myDeck)
+//
+//print ("Joey's hand was " + "\(Joey.hand)")
+//Joey.discard(card: Joey.hand[0])
+//print ("Joey's hand is now " + "\(Joey.hand)")
