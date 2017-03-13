@@ -111,7 +111,7 @@ class ViewController: UIViewController {
                         }
                     }
                     turn += 1
-                    if turn == 9 {
+                    if turn == 9 && win == 0{
                         WinnerLabel.text = "You both should really rethink your lives if you can't win a simple game of tic-tac-toe...  Anyways, please play again! :)"
                         WinnerLabel.isHidden = false
                         win = 1
