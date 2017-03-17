@@ -1,0 +1,8 @@
+version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
+options: "922a43ed8b90ebb032083170f1c5a156"
+build_time: [543065743, 517717000]
+inputs:
+  "/Users/josephzoland/Desktop/DojoAssignments/IOS/Bucket List/Bucket List/BucketListViewController.swift": [543065743, 0]
+  "/Users/josephzoland/Desktop/DojoAssignments/IOS/Bucket List/Bucket List/AppDelegate.swift": [542933874, 0]
+  "/Users/josephzoland/Desktop/DojoAssignments/IOS/Bucket List/AddItemTableViewControllerDelegate.swift": [542943572, 0]
+  "/Users/josephzoland/Desktop/DojoAssignments/IOS/Bucket List/Bucket List/AddItemTableViewController.swift": [543064661, 0]
