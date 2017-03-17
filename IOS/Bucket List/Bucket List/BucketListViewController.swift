@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BucketListViewController: UITableViewController, AddItemTableViewControllerDelegate {
+class BucketListViewController: UITableViewController, AddItemTableViewControllerDelegate, passItemViewControllerDelegate {
     
     var items = [String()]
 
@@ -39,9 +39,29 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
         }
+        if segue.identifier == "Proceed" {
+            print ("reached proceed")
+            let navigationController = segue.destination as! UINavigationController
+            let ProceedViewController = navigationController.topViewController as! ProceedViewController
+            ProceedViewController.delegate = self
+            let indexPath = sender as! NSIndexPath
+            let item = items[indexPath.row]
+            ProceedViewController.item = item
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "Proceed", sender: indexPath)
+    }
+    
+    func passItem (by controller: BucketListViewController, with text: String) {
+        
     }
     
     func cancelButtonPressed(by controller: AddItemTableViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func backButtonPressed(by controller: ProceedViewController) {
         dismiss(animated: true, completion: nil)
     }
     func itemSaved(by controller: AddItemTableViewController, with text: String) {

@@ -168,6 +168,7 @@ SWIFT_CLASS("_TtC11Bucket_List11AppDelegate")
 @class UITableView;
 @class UITableViewCell;
 @class UIStoryboardSegue;
+@class ProceedViewController;
 
 SWIFT_CLASS("_TtC11Bucket_List24BucketListViewController")
 @interface BucketListViewController : UITableViewController
@@ -177,9 +178,24 @@ SWIFT_CLASS("_TtC11Bucket_List24BucketListViewController")
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)passItemBy:(BucketListViewController * _Nonnull)controller with:(NSString * _Nonnull)text;
 - (void)cancelButtonPressedBy:(AddItemTableViewController * _Nonnull)controller;
+- (void)backButtonPressedBy:(ProceedViewController * _Nonnull)controller;
 - (void)itemSavedBy:(AddItemTableViewController * _Nonnull)controller with:(NSString * _Nonnull)text;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11Bucket_List21ProceedViewController")
+@interface ProceedViewController : UIViewController
+@property (nonatomic, copy) NSString * _Nonnull item;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemLabel;
+- (IBAction)cancelButtonPressed:(UIBarButtonItem * _Nonnull)sender;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

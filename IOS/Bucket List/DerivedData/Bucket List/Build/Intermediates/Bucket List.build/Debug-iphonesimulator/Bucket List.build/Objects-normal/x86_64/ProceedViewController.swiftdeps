@@ -1,0 +1,350 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ProceedViewController"
+provides-nominal:
+- "C11Bucket_List21ProceedViewController"
+provides-member:
+- ["C11Bucket_List21ProceedViewController", ""]
+provides-dynamic-lookup:
+- "viewDidLoad"
+- "item"
+- "didReceiveMemoryWarning"
+- "cancelButtonPressed"
+- "itemLabel"
+depends-top-level:
+- "UIViewController"
+- "ProceedViewController"
+- "CancelButtonDelegate"
+- "AssignmentPrecedence"
+- "String"
+- "UIBarButtonItem"
+- "passItemViewControllerDelegate"
+- "UILabel"
+depends-member:
+- ["Ps9AnyObject", "String"]
+- ["Ps9AnyObject", "cancelButtonPressed"]
+- ["Ps9AnyObject", "delegate"]
+- ["Ps9AnyObject", "delegate2"]
+- ["Ps9AnyObject", "didReceiveMemoryWarning"]
+- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "item"]
+- ["Ps9AnyObject", "itemLabel"]
+- !private ["Ps9AnyObject", "text"]
+- ["Ps9AnyObject", "viewDidLoad"]
+- ["Ps9AnyObject", ""]
+- !private ["PSo15CALayerDelegate", "text"]
+- ["Ps7CVarArg", "String"]
+- ["Ps7CVarArg", "cancelButtonPressed"]
+- ["Ps7CVarArg", "delegate"]
+- ["Ps7CVarArg", "delegate2"]
+- ["Ps7CVarArg", "didReceiveMemoryWarning"]
+- ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "item"]
+- ["Ps7CVarArg", "itemLabel"]
+- !private ["Ps7CVarArg", "text"]
+- ["Ps7CVarArg", "viewDidLoad"]
+- ["Ps7CVarArg", ""]
+- !private ["P11Bucket_List20CancelButtonDelegate", "backButtonPressed"]
+- ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "String"]
+- ["Ps28CustomDebugStringConvertible", "cancelButtonPressed"]
+- ["Ps28CustomDebugStringConvertible", "delegate"]
+- ["Ps28CustomDebugStringConvertible", "delegate2"]
+- ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "item"]
+- ["Ps28CustomDebugStringConvertible", "itemLabel"]
+- !private ["Ps28CustomDebugStringConvertible", "text"]
+- ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "String"]
+- ["Ps23CustomStringConvertible", "cancelButtonPressed"]
+- ["Ps23CustomStringConvertible", "delegate"]
+- ["Ps23CustomStringConvertible", "delegate2"]
+- ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "item"]
+- ["Ps23CustomStringConvertible", "itemLabel"]
+- !private ["Ps23CustomStringConvertible", "text"]
+- ["Ps23CustomStringConvertible", "viewDidLoad"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "String"]
+- ["Ps9Equatable", "cancelButtonPressed"]
+- ["Ps9Equatable", "delegate"]
+- ["Ps9Equatable", "delegate2"]
+- ["Ps9Equatable", "didReceiveMemoryWarning"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "item"]
+- ["Ps9Equatable", "itemLabel"]
+- !private ["Ps9Equatable", "text"]
+- ["Ps9Equatable", "viewDidLoad"]
+- ["Ps9Equatable", ""]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps32ExpressibleByStringInterpolation", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Ps8Hashable", "String"]
+- ["Ps8Hashable", "cancelButtonPressed"]
+- ["Ps8Hashable", "delegate"]
+- ["Ps8Hashable", "delegate2"]
+- ["Ps8Hashable", "didReceiveMemoryWarning"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "item"]
+- ["Ps8Hashable", "itemLabel"]
+- !private ["Ps8Hashable", "text"]
+- ["Ps8Hashable", "viewDidLoad"]
+- ["Ps8Hashable", ""]
+- ["SQ", "deinit"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps10MirrorPath", "init"]
+- ["CSo7NSCoder", "deinit"]
+- ["PSo8NSCoding", "String"]
+- ["PSo8NSCoding", "cancelButtonPressed"]
+- ["PSo8NSCoding", "delegate"]
+- ["PSo8NSCoding", "delegate2"]
+- ["PSo8NSCoding", "didReceiveMemoryWarning"]
+- !private ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "item"]
+- ["PSo8NSCoding", "itemLabel"]
+- !private ["PSo8NSCoding", "text"]
+- ["PSo8NSCoding", "viewDidLoad"]
+- ["PSo8NSCoding", ""]
+- ["PSo26NSExtensionRequestHandling", "String"]
+- ["PSo26NSExtensionRequestHandling", "cancelButtonPressed"]
+- ["PSo26NSExtensionRequestHandling", "delegate"]
+- ["PSo26NSExtensionRequestHandling", "delegate2"]
+- ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
+- !private ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "item"]
+- ["PSo26NSExtensionRequestHandling", "itemLabel"]
+- ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- ["CSo8NSObject", "CancelButtonDelegate"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIBarButtonItem"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "cancelButtonPressed"]
+- ["CSo8NSObject", "delegate"]
+- ["CSo8NSObject", "delegate2"]
+- ["CSo8NSObject", "didReceiveMemoryWarning"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "item"]
+- ["CSo8NSObject", "itemLabel"]
+- ["CSo8NSObject", "passItemViewControllerDelegate"]
+- !private ["CSo8NSObject", "text"]
+- ["CSo8NSObject", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", "String"]
+- ["PSo16NSObjectProtocol", "cancelButtonPressed"]
+- ["PSo16NSObjectProtocol", "delegate"]
+- ["PSo16NSObjectProtocol", "delegate2"]
+- ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "item"]
+- ["PSo16NSObjectProtocol", "itemLabel"]
+- !private ["PSo16NSObjectProtocol", "text"]
+- ["PSo16NSObjectProtocol", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", ""]
+- ["Sq", "deinit"]
+- ["C11Bucket_List21ProceedViewController", "CancelButtonDelegate"]
+- ["C11Bucket_List21ProceedViewController", "String"]
+- ["C11Bucket_List21ProceedViewController", "UIBarButtonItem"]
+- ["C11Bucket_List21ProceedViewController", "UILabel"]
+- ["C11Bucket_List21ProceedViewController", "cancelButtonPressed"]
+- ["C11Bucket_List21ProceedViewController", "deinit"]
+- ["C11Bucket_List21ProceedViewController", "delegate"]
+- ["C11Bucket_List21ProceedViewController", "delegate2"]
+- ["C11Bucket_List21ProceedViewController", "didReceiveMemoryWarning"]
+- ["C11Bucket_List21ProceedViewController", "init"]
+- ["C11Bucket_List21ProceedViewController", "item"]
+- ["C11Bucket_List21ProceedViewController", "itemLabel"]
+- ["C11Bucket_List21ProceedViewController", "passItemViewControllerDelegate"]
+- ["C11Bucket_List21ProceedViewController", "viewDidLoad"]
+- ["SS", "deinit"]
+- ["SS", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "text"]
+- !private ["PSo12UIAppearance", "text"]
+- ["PSo21UIAppearanceContainer", "String"]
+- ["PSo21UIAppearanceContainer", "cancelButtonPressed"]
+- ["PSo21UIAppearanceContainer", "delegate"]
+- ["PSo21UIAppearanceContainer", "delegate2"]
+- ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "item"]
+- ["PSo21UIAppearanceContainer", "itemLabel"]
+- !private ["PSo21UIAppearanceContainer", "text"]
+- ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["PSo18UIContentContainer", "String"]
+- ["PSo18UIContentContainer", "cancelButtonPressed"]
+- ["PSo18UIContentContainer", "delegate"]
+- ["PSo18UIContentContainer", "delegate2"]
+- ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
+- !private ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "item"]
+- ["PSo18UIContentContainer", "itemLabel"]
+- ["PSo18UIContentContainer", "viewDidLoad"]
+- ["PSo18UIContentContainer", ""]
+- !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
+- !private ["PSo17UICoordinateSpace", "text"]
+- !private ["PSo13UIDynamicItem", "text"]
+- ["PSo18UIFocusEnvironment", "String"]
+- ["PSo18UIFocusEnvironment", "cancelButtonPressed"]
+- ["PSo18UIFocusEnvironment", "delegate"]
+- ["PSo18UIFocusEnvironment", "delegate2"]
+- ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "item"]
+- ["PSo18UIFocusEnvironment", "itemLabel"]
+- !private ["PSo18UIFocusEnvironment", "text"]
+- ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "text"]
+- !private ["CSo7UILabel", "text"]
+- ["CSo11UIResponder", "CancelButtonDelegate"]
+- ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UIBarButtonItem"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "cancelButtonPressed"]
+- ["CSo11UIResponder", "delegate"]
+- ["CSo11UIResponder", "delegate2"]
+- ["CSo11UIResponder", "didReceiveMemoryWarning"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "item"]
+- ["CSo11UIResponder", "itemLabel"]
+- ["CSo11UIResponder", "passItemViewControllerDelegate"]
+- !private ["CSo11UIResponder", "text"]
+- ["CSo11UIResponder", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", "String"]
+- ["PSo30UIResponderStandardEditActions", "cancelButtonPressed"]
+- ["PSo30UIResponderStandardEditActions", "delegate"]
+- ["PSo30UIResponderStandardEditActions", "delegate2"]
+- ["PSo30UIResponderStandardEditActions", "didReceiveMemoryWarning"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- ["PSo30UIResponderStandardEditActions", "item"]
+- ["PSo30UIResponderStandardEditActions", "itemLabel"]
+- !private ["PSo30UIResponderStandardEditActions", "text"]
+- ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- ["PSo16UIStateRestoring", "String"]
+- ["PSo16UIStateRestoring", "cancelButtonPressed"]
+- ["PSo16UIStateRestoring", "delegate"]
+- ["PSo16UIStateRestoring", "delegate2"]
+- ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
+- !private ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "item"]
+- ["PSo16UIStateRestoring", "itemLabel"]
+- ["PSo16UIStateRestoring", "viewDidLoad"]
+- ["PSo16UIStateRestoring", ""]
+- ["PSo18UITraitEnvironment", "String"]
+- ["PSo18UITraitEnvironment", "cancelButtonPressed"]
+- ["PSo18UITraitEnvironment", "delegate"]
+- ["PSo18UITraitEnvironment", "delegate2"]
+- ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "item"]
+- ["PSo18UITraitEnvironment", "itemLabel"]
+- !private ["PSo18UITraitEnvironment", "text"]
+- ["PSo18UITraitEnvironment", "viewDidLoad"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "text"]
+- ["CSo16UIViewController", "CancelButtonDelegate"]
+- ["CSo16UIViewController", "String"]
+- ["CSo16UIViewController", "UIBarButtonItem"]
+- ["CSo16UIViewController", "UILabel"]
+- ["CSo16UIViewController", "cancelButtonPressed"]
+- ["CSo16UIViewController", "deinit"]
+- ["CSo16UIViewController", "delegate"]
+- ["CSo16UIViewController", "delegate2"]
+- ["CSo16UIViewController", "didReceiveMemoryWarning"]
+- ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "item"]
+- ["CSo16UIViewController", "itemLabel"]
+- ["CSo16UIViewController", "passItemViewControllerDelegate"]
+- ["CSo16UIViewController", "viewDidLoad"]
+- ["CSo16UIViewController", ""]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps9_Hashable", "String"]
+- ["Ps9_Hashable", "cancelButtonPressed"]
+- ["Ps9_Hashable", "delegate"]
+- ["Ps9_Hashable", "delegate2"]
+- ["Ps9_Hashable", "didReceiveMemoryWarning"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "item"]
+- ["Ps9_Hashable", "itemLabel"]
+- !private ["Ps9_Hashable", "text"]
+- ["Ps9_Hashable", "viewDidLoad"]
+- ["Ps9_Hashable", ""]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "PSo15CALayerDelegate"
+- "Ps7CVarArg"
+- !private "P11Bucket_List20CancelButtonDelegate"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps32ExpressibleByStringInterpolation"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps8Hashable"
+- "SQ"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "CSo7NSCoder"
+- "PSo8NSCoding"
+- "PSo26NSExtensionRequestHandling"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "Sq"
+- "C11Bucket_List21ProceedViewController"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo18UIContentContainer"
+- !private "PSo30UIContentSizeCategoryAdjusting"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
+- !private "CSo7UILabel"
+- "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
+- "PSo16UIStateRestoring"
+- "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps9_Hashable"
+- "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "9b1b45eaa7d8635cd9db44592fc22c7b"
