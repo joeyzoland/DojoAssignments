@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BucketListViewController: UITableViewController, AddItemTableViewControllerDelegate, passItemViewControllerDelegate {
+class BucketListViewController: UITableViewController, AddItemTableViewControllerDelegate, passItemViewControllerDelegate, CancelButtonDelegate {
     
     var items = [String()]
 
@@ -62,6 +62,7 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         dismiss(animated: true, completion: nil)
     }
     func backButtonPressed(by controller: ProceedViewController) {
+        print ("I am the hidden controller")
         dismiss(animated: true, completion: nil)
     }
     func itemSaved(by controller: AddItemTableViewController, with text: String) {

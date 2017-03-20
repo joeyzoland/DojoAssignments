@@ -11,8 +11,7 @@ import UIKit
 
 class ProceedViewController: UIViewController {
     
-    weak var delegate: passItemViewControllerDelegate?
-    weak var delegate2: CancelButtonDelegate?
+    weak var delegate: CancelButtonDelegate?
     
     var item = String()
     
@@ -20,7 +19,9 @@ class ProceedViewController: UIViewController {
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         print ("I am the actual controller")
-        delegate2?.backButtonPressed(by: self)
+        print ("\(delegate) is the hidden controller")
+        delegate?.backButtonPressed(by: self)
+
     }
 
     

@@ -6,43 +6,45 @@ provides-nominal:
 provides-member:
 - ["C11Bucket_List24BucketListViewController", ""]
 provides-dynamic-lookup:
-- "tableView"
-- "tableView"
-- "tableView"
-- "items"
-- "passItem"
+- "itemSaved"
 - "prepare"
-- "viewDidLoad"
-- "cancelButtonPressed"
+- "items"
+- "tableView"
+- "tableView"
+- "tableView"
 - "didReceiveMemoryWarning"
 - "backButtonPressed"
-- "itemSaved"
+- "cancelButtonPressed"
+- "passItem"
+- "viewDidLoad"
 depends-top-level:
-- "String"
-- "IndexPath"
-- !private "UINavigationController"
-- !private "BooleanLiteralType"
-- "passItemViewControllerDelegate"
-- !private "StringLiteralType"
-- "UITableViewCell"
 - "UITableViewController"
 - "AddItemTableViewControllerDelegate"
+- "passItemViewControllerDelegate"
+- "CancelButtonDelegate"
+- "UITableViewCell"
+- "IndexPath"
 - "Array"
+- !private "UINavigationController"
 - "CastingPrecedence"
-- "UIStoryboardSegue"
-- !private "print"
 - "AssignmentPrecedence"
+- "String"
 - !private "=="
-- "BucketListViewController"
-- "Int"
-- !private "NSIndexPath"
-- "ProceedViewController"
-- "UITableView"
 - "AddItemTableViewController"
+- "UITableView"
+- !private "StringLiteralType"
+- !private "print"
+- "BucketListViewController"
+- !private "BooleanLiteralType"
+- "Int"
+- "ProceedViewController"
+- !private "NSIndexPath"
+- "UIStoryboardSegue"
 depends-member:
 - ["C11Bucket_List26AddItemTableViewController", "deinit"]
 - !private ["C11Bucket_List26AddItemTableViewController", "delegate"]
 - ["P11Bucket_List34AddItemTableViewControllerDelegate", "String"]
+- ["P11Bucket_List34AddItemTableViewControllerDelegate", "backButtonPressed"]
 - ["P11Bucket_List34AddItemTableViewControllerDelegate", "cancelButtonPressed"]
 - !private ["P11Bucket_List34AddItemTableViewControllerDelegate", "dismiss"]
 - ["P11Bucket_List34AddItemTableViewControllerDelegate", "itemSaved"]
@@ -186,6 +188,17 @@ depends-member:
 - !private ["Ps7CVarArg", "topViewController"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
+- ["P11Bucket_List20CancelButtonDelegate", "String"]
+- ["P11Bucket_List20CancelButtonDelegate", "backButtonPressed"]
+- ["P11Bucket_List20CancelButtonDelegate", "cancelButtonPressed"]
+- !private ["P11Bucket_List20CancelButtonDelegate", "dismiss"]
+- ["P11Bucket_List20CancelButtonDelegate", "itemSaved"]
+- !private ["P11Bucket_List20CancelButtonDelegate", "items"]
+- ["P11Bucket_List20CancelButtonDelegate", "passItem"]
+- !private ["P11Bucket_List20CancelButtonDelegate", "performSegue"]
+- !private ["P11Bucket_List20CancelButtonDelegate", "print"]
+- !private ["P11Bucket_List20CancelButtonDelegate", "tableView"]
+- ["P11Bucket_List20CancelButtonDelegate", ""]
 - ["Ps10Collection", "Element"]
 - !private ["Ps10Collection", "Index"]
 - !private ["Ps10Collection", "IndexDistance"]
@@ -1018,6 +1031,7 @@ depends-member:
 - !private ["Ps11_Strideable", "Stride"]
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
 - ["P11Bucket_List30passItemViewControllerDelegate", "String"]
+- ["P11Bucket_List30passItemViewControllerDelegate", "backButtonPressed"]
 - ["P11Bucket_List30passItemViewControllerDelegate", "cancelButtonPressed"]
 - !private ["P11Bucket_List30passItemViewControllerDelegate", "dismiss"]
 - ["P11Bucket_List30passItemViewControllerDelegate", "itemSaved"]
@@ -1040,6 +1054,7 @@ depends-nominal:
 - "C11Bucket_List24BucketListViewController"
 - !private "PSo15CALayerDelegate"
 - "Ps7CVarArg"
+- "P11Bucket_List20CancelButtonDelegate"
 - "Ps10Collection"
 - "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
@@ -1153,4 +1168,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-interface-hash: "0d93d2d2214797dd056f8e4880239665"
+interface-hash: "271f71f600fc9396e783306b80f2b2f9"

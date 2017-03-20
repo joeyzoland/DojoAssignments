@@ -7,9 +7,9 @@ provides-member:
 - ["P11Bucket_List34AddItemTableViewControllerDelegate", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "String"
 - "AddItemTableViewController"
 - "AddItemTableViewControllerDelegate"
-- "String"
 depends-member:
 - ["P11Bucket_List34AddItemTableViewControllerDelegate", "AddItemTableViewController"]
 - ["P11Bucket_List34AddItemTableViewControllerDelegate", "String"]
