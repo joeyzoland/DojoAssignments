@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Button Fun</title>
+  </head>
+  <body>
+    <button id="buttonOfInterest">This started off as a blue button</button>
+
+    <style>
+      #buttonOfInterest {
+        background: blue
+      }
+
+    </style>
+
+    <script>
+      var blueButton = document.getElementById("buttonOfInterest")
+      var nonHoverColor = "blue"
+      blueButton.addEventListener("click", changeColor)
+      blueButton.addEventListener("mouseover", hoverColor)
+      blueButton.addEventListener("mouseout", hoverOutColor)
+
+      blueButton.style.backgroundColor = nonHoverColor
+      function changeColor() {
+        if (nonHoverColor == "red") {
+          nonHoverColor = "blue"
+        }
+        else {
+          nonHoverColor = "red"
+        }
+      }
+      function hoverColor() {
+        blueButton.style.backgroundColor = "green"
+      }
+      function hoverOutColor() {
+        blueButton.style.backgroundColor = nonHoverColor
+      }
+    </script>
+
+  </body>
+</html>
