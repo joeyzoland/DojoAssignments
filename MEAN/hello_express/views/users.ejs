@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Here are all of the users:</h2>
+    <% for (var i = 0; i < superusers.length; i++) { %>
+      <h3>Name: <%= superusers[i].name %> </h3>
+      <h4>Email: <%= superusers[i].email %> </h4>
+      <hr>
+    <% } %>
+  </body>
+</html>
