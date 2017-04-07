@@ -3,28 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+    $(document).ready(function () {
+      var socket = io.connect()
+      $("button").click(function () {
+        console.log("button is being clicked")
+        socket.emit("button_clicked", {
+          name: $("#name").val(),
+          location: $("#location").val(),
+          language: $("#language").val(),
+          comment: $("#comment").val(),
+        })
+      })
+      socket.on("server_response", function(data) {
+        console.log("The server returns: ", data.information)
+        $('#sentdata').html("<h5>Name: " + data.name + "</h5><h5>Location: " + data.location + "</h5><h5>Language: " + data.language + "</h5><h5>Comment: " + data.comment + "</h5></h5> Random: " + data.random_number + "\<h5>")
+      })
+    })
+    </script>
   </head>
   <body>
-    <form action = "/result" method = "post">
+    <div id="sentdata"></div>
+    <form method = "post">
       <label for = "name">Your Name</label>
-      <input type = "text" name = "name">
+      <input type = "text" name = "name" id = "name">
       <label for = "location">Dojo Location</label>
-      <select name = "location">
+      <select name = "location" id = "location">
         <option value = "Under the Sea">Under the Sea</option>
         <option value = "San Jose">San Jose</option>
         <option value = "Mountain View">Mountain View</option>
         <option value = "Switzerland">Switzerland</option>
       </select>
       <label for = "language">Favorite language</label>
-      <select name = "language">
+      <select name = "language" id = "language">
         <option value = "English">English</option>
         <option value = "Ios">Ios</option>
         <option value = "Python">Python</option>
         <option value = "Javascript">Javascript</option>
       </select>
       <label for = "comment">Comment (Optional)</label>
-      <input type = "text" name = "comment">
-      <input type = "submit" value = "Submit">
+      <input type = "text" name = "comment" id = "comment">
     </form>
+    <button>Submit</button>
   </body>
 </html>
