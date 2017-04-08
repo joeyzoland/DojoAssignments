@@ -1,0 +1,15 @@
+1.) Upon entry to the chatroom, display a prompt that asks for the user's
+name (with cancel and ok buttons)
+
+2.) a.) Upon entering name in prompt, generate a number and
+store that as the key and the user's name as the value in a server
+variable dictionary (the client triggers with an event called "new_user")
+b.) Have the client listen for the "new_user" event and send back info
+with the chatting variable to the new_user
+c.) Route the user to the chat page with the chat info inserted
+
+3.) a.) Whenever a user submits a message by pressing the "submit" button, the
+client sends a new event called "new_message" which includes the user's
+id (which was sent upon creation) and the message that was sent
+b.) When the client receives "new_message", it stores that message in an
+array of messages with the associated username and first names
