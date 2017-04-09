@@ -8,21 +8,43 @@
     <script type ="text/javascript">
 
     $(document).ready(function () {
-      if (typeof(person) === "undefined") {
-        var person = prompt("Please enter your name")
-        if (person == undefined) {
-          person = "Anonymous"
-        }
-        console.log("new user has been created on the client side")
-        socket.emit("new_user", {person: person
-        })
-      }
       var socket = io.connect()
+      $("#submit_button").click(function () {
+        if ($("#content").val() != "") {
+          socket.emit("new_message", {
+            content: $("#content").val()
+          })
+          $("#content").val("")
+        }
+      })
+      socket.on("all_messages", function(data) {
+        // console.log("Server received data.message")
+        // console.log(data.messages)
+        for (i in data.messages) {
+          $("#messageboard").append("<p>" + data.messages[i] + "</p>")
+        }
+      })
 
+      socket.on("new_message", function(new_message) {
+        console.log("received new message!")
+          $("#messageboard").append("<p>" + new_message + "</p>")
+      })
+
+      var name = prompt("Please enter your name")
+      //This replaces the name with "Anonymous" if someone clicks
+      //"Cancel" or tries to enter an empty string as their name
+      if (name == undefined || name === "") {
+        name = "Anonymous"
+      }
+      // console.log("new user has been created on the client side")
+      socket.emit("new_user", {name: name}
+      )
     })
     </script>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <div id = "messageboard"></div>
+    <input type = "textarea" methods = "post" placeholder = "enter your message here" id = "content"></textarea>
+    <button id = "submit_button">Submit</button>
   </body>
 </html>

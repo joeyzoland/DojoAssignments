@@ -1,8 +1,8 @@
 var express = require("express")
 var app = express()
-var count = 0
-
-var logged = false
+var users = []
+var dict = {}
+var messages = []
 
 app.set("view engine", "ejs")
 
@@ -20,7 +20,16 @@ io.sockets.on("connection", function(socket) {
   console.log("sockets have started")
   //Put other socket methods here
   socket.on("new_user", function(person) {
-    console.log(person)
-    console.log("The server says that the person who clicked is " + person)
+    person["id"] = socket.id
+    users.push(person)
+    dict[socket.id] = person.name
+    // console.log({messages})
+    socket.emit("all_messages", {messages})
+  })
+  socket.on("new_message", function(message) {
+    var new_message = dict[socket.id] + ": " + message.content
+    messages.push(new_message)
+    // console.log(new_message)
+    io.emit("new_message", new_message)
   })
 })
