@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+  </head>
+  <body>
+    <h3>Here are the awesome quotes!</h3>
+    <hr>
+    <% for (i in userList) { %>
+      <p> "<%= userList[i].quote %>" </p>
+      <p> -<%= userList[i].name %> at <%= userList[i].date %></p>
+      <hr>
+    <% } %>
+
+    <form action = "/">
+      <input type = "submit" value = "Return to homepage and insert new quote!">
+    </form>
+  </body>
+</html>
