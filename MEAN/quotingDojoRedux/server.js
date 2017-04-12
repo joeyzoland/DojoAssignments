@@ -9,7 +9,7 @@ var UserSchema = new mongoose.Schema({
   name: String,
   quote: String,
   created_at: Date
-  // created_at: {type: Date, default: Date.now}
+  //Try using timestamps instead...
 })
 
 mongoose.model("User", UserSchema)
