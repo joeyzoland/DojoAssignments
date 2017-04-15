@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script type = "text/javascript">
+      var myApp = angular.module("myApp", [])
+
+      myApp.controller("myController", ["$scope", function($scope) {
+        $scope.personArray = [{first:"Joey", last:"Zoland", language:"Python"}]
+
+        $scope.createPerson = function () {
+          //Note: I just check for undefined on language, as all are undefined before data is entered
+          if ($scope.firstModel != "" && $scope.lastModel != "" && $scope.languageModel != "" && typeof($scope.languageModel) != "undefined") {
+            var newPerson = {first: $scope.firstModel, last: $scope.lastModel, language: $scope.languageModel}
+            $scope.personArray.push(newPerson)
+            //Resetting Input fields
+            $scope.firstModel = ""
+            $scope.lastModel = ""
+            $scope.languageModel = ""
+          }
+        }
+        $scope.deletePerson = function (index) {
+          $scope.personArray.splice(index, 1)
+          }
+      }])
+
+    </script>
+  </head>
+  <body>
+    <div ng-controller = "myController" id = "myController">
+      <label for = "first">First Name</label>
+      <input type = "text" name = "first" ng-model = "firstModel">
+      <label for = "last">Last Name</label>
+      <input type = "text" name = "last" ng-model = "lastModel">
+      <label for = "language">Favorite Language</label>
+      <input type = "text" name = "language" ng-model = "languageModel">
+      <button ng-init="button_label = 'Create User'" ng-click="createPerson();">{{button_label}}</button>
+
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Fav Language</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat="person in personArray track by $index">
+          <td>{{person.first}}</td>
+          <td>{{person.last}}</td>
+          <td>{{person.language}}</td>
+          <td><button ng-click = "deletePerson($index)">Delete</td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>

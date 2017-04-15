@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script type = "text/javascript">
+    var myApp = angular.module("myApp", [])
+
+    myApp.factory("productFactory", function () {
+      var products = []
+      var factory = {}
+
+      //A.) How does this combine with B below to return products?
+      factory.getProducts = function(callback) {
+        callback(products)
+      }
+      factory.add = function(object) {
+        products.push(object)
+      }
+      factory.delete = function(index) {
+        products.splice(index, 1)
+      }
+      return factory
+    })
+
+    myApp.controller("myController", ["$scope", "productFactory", function ($scope, productFactory) {
+      $scope.products = []
+
+      //How do I turn the above lines of code into a function?
+      $scope.index = function () {
+        //Where is the "data" variable coming from?
+        //function(data) is a simple fetch, and then you assign to scope.products
+        productFactory.getProducts(function(data) {
+          $scope.products = data
+        })
+      }
+      $scope.index()
+
+      //These array adjustments do not require callbacks, as Angular checks
+      //for changes periodically so it doesn't matter what order
+      //the operations happen in
+      $scope.addProduct = function () {
+        if ($scope.nameModel != "" && $scope.priceModel != "" && typeof($scope.priceModel) != "undefined" && typeof($scope.nameModel) != "undefined") {
+          productFactory.add({name: $scope.nameModel, price: $scope.priceModel})
+          $scope.index()
+          $scope.nameModel = ""
+          $scope.priceModel = ""
+        }
+      }
+      $scope.deleteProduct = function (index) {
+        productFactory.delete(index)
+        $scope.index()
+      }
+
+
+
+    }])
+
+
+
+    </script>
+
+  </head>
+  <body ng-controller = "myController">
+
+    <label for = "name">Product Name</label>
+    <input type = "text" name = "name" ng-model = "nameModel">
+    <label for = "price">Product Price</label>
+    <input type = "text" name = "price" ng-model = "priceModel">
+    <button ng-click = "addProduct(index)">Add Product</button>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="product in products | orderBy: 'price' track by $index">
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency:"$"}}</td>
+        <td>
+          <button ng-click = "deleteProduct($index)">Delete Product</button>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+  </html>

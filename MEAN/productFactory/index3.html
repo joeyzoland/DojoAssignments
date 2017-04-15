@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script type = "text/javascript">
+    var myApp = angular.module("myApp", [])
+
+    myApp.factory("productFactory", function () {
+      var products = []
+      var factory = {}
+
+      //A.) How does this combine with B below to return products?
+      factory.getProducts = function(callback) {
+        callback(products)
+      }
+      factory.add = function(object) {
+        products.push(object)
+      }
+      factory.delete = function(index) {
+        products.splice(index, 1)
+      }
+      factory.buy = function(index) {
+        // Stopped people from buying in two ways
+        // 1.) Won't allow decrement if quantity > 0
+        // 2.) Erase button if quantity <= 0
+        if (products[index].quantity > 0) {
+        products[index].quantity -= 1
+        }
+      }
+      return factory
+    })
+
+    myApp.controller("myController", ["$scope", "productFactory", function ($scope, productFactory) {
+      $scope.products = []
+
+      //How do I turn the above lines of code into a function?
+      $scope.index = function () {
+        //Where is the "data" variable coming from?
+        //function(data) is a simple fetch, and then you assign to scope.products
+        productFactory.getProducts(function(data) {
+          $scope.products = data
+        })
+      }
+      $scope.index()
+
+      //These array adjustments do not require callbacks, as Angular checks
+      //for changes periodically so it doesn't matter what order
+      //the operations happen in
+      $scope.addProduct = function () {
+        if ($scope.nameModel != "" && $scope.priceModel != "" && typeof($scope.priceModel) != "undefined" && typeof($scope.nameModel) != "undefined") {
+          productFactory.add({name: $scope.nameModel, price: $scope.priceModel, quantity: 50})
+          $scope.index()
+          $scope.nameModel = ""
+          $scope.priceModel = ""
+        }
+      }
+      $scope.deleteProduct = function (index) {
+        productFactory.delete(index)
+        $scope.index()
+      }
+    }])
+
+    myApp.controller("mySecondController", ["$scope", "productFactory", function ($scope, productFactory) {
+      $scope.products = []
+
+      $scope.index = function () {
+        productFactory.getProducts(function(data) {
+          $scope.products = data
+        })
+      }
+      $scope.index()
+
+      $scope.buyProduct = function (index) {
+        console.log("$scope.buyProduct activated within controller")
+        productFactory.buy(index)
+        $scope.index()
+      }
+
+    }])
+
+    </script>
+  </head>
+  <body>
+
+    <div ng-controller = "myController">
+      <label for = "name">Product Name</label>
+      <input type = "text" name = "name" ng-model = "nameModel">
+      <label for = "price">Product Price</label>
+      <input type = "text" name = "price" ng-model = "priceModel">
+      <button ng-click = "addProduct(index)">Add Product</button>
+
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat="product in products | orderBy: 'price' track by $index">
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency:"$"}}</td>
+          <td>
+            <button ng-click = "deleteProduct($index)">Delete Product</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+
+    <div ng-controller = "mySecondController">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qty Available</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat="product in products | orderBy: 'price' track by $index">
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency:"$"}}</td>
+          <td>{{product.quantity}}</td>
+          <td ng-if="product.quantity>0">
+            <button ng-click = "buyProduct($index)">Buy</button>
+          </td>
+          <td ng-if="product.quantity==0">
+            Sold Out!
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+  </body>
+  </html>

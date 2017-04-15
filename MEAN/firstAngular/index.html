@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src = 'bower_components/angular/angular.js'>
+      var app = angular.module("app", [])
+    </script>
+  </head>
+  <body ng-init="dojo = ['a', 'b', 'c']">
+    <p>{{dojo}}</p>
+    <p ng-bind="5 * 2"></p>
+    <ul>
+      <li ng-repeat="letter in dojo">{{letter}}</li>
+    </ul>
+  </body>
+</html>

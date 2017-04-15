@@ -1,0 +1,13 @@
+{
+  "name": "controllersDirectives",
+  "homepage": "https://github.com/joeyzoland/DojoAssignments",
+  "authors": [
+    "Joseph Zoland <joeyzoland@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "Coding Dojo",
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}
