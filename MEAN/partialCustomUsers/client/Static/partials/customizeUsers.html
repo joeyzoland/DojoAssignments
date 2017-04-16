@@ -1,0 +1,24 @@
+<div ng-controller="usersController">
+  <label for = "first">First Name</label>
+  <input type = "text" name = "first" ng-model = "firstModel">
+  <label for = "last">Last Name</label>
+  <input type = "text" name = "last" ng-model = "lastModel">
+  <label for = "language">Favorite Language</label>
+  <input type = "text" name = "language" ng-model = "languageModel">
+  <button ng-init="button_label = 'Create User'" ng-click="createPerson();">{{button_label}}</button>
+
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Fav Language</th>
+      <th>Actions</th>
+    </tr>
+    <tr ng-repeat="person in personArray track by $index">
+      <td>{{person.first}}</td>
+      <td>{{person.last}}</td>
+      <td>{{person.language}}</td>
+      <td><button ng-click = "deletePerson($index)">Delete</td>
+    </tr>
+  </table>
+</div>

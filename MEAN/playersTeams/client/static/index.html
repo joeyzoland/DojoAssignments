@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+
+    <script>
+
+    var myApp = angular.module("myApp", ["ngRoute"])
+
+    myApp.config(function ($routeProvider) {
+      $routeProvider
+        .when("/", {
+          //Reminder: spell the key correctly!
+          //Not!= templateURL: "partials/players.html" !!!!!!!!
+          templateUrl: "partials/players.html"
+        })
+        .when("/teams", {
+          templateUrl: "partials/teams.html"
+        })
+        .when("/associations", {
+          templateUrl: "partials/associations.html"
+        })
+        .otherwise({
+          redirectTo: "/"
+        })
+    })
+
+    myApp.factory("playerFactory", function() {
+      var players = []
+      var factory = {}
+
+      factory.getPlayers = function(callback) {
+        callback(players)
+      }
+
+      factory.addPlayer = function(object) {
+        players.push(object)
+        console.log(players)
+      }
+
+      factory.removePlayer = function(index) {
+        players.splice(index, 1)
+      }
+      return factory
+    })
+
+    myApp.factory("teamFactory", function() {
+      var teams = []
+      var factory = {}
+
+      factory.getTeams = function(callback) {
+        callback(teams)
+      }
+
+      factory.addTeam = function(object) {
+        teams.push(object)
+      }
+
+      factory.removeTeam = function(index) {
+        teams.splice(index, 1)
+      }
+      return factory
+    })
+
+    myApp.controller("playersController", function ($scope, playerFactory) {
+      $scope.playersArray = []
+
+      $scope.index = function() {
+        playerFactory.getPlayers(function(data) {
+          $scope.playersArray = data
+        })
+      }
+      $scope.index()
+
+      $scope.createPlayer = function () {
+        if ($scope.nameModel != "" && typeof($scope.nameModel) != "undefined") {
+          playerFactory.addPlayer({name: $scope.nameModel})
+          $scope.index()
+          $scope.nameModel = ""
+        }
+      }
+
+      $scope.removePlayer = function (index) {
+        playerFactory.removePlayer(index)
+        $scope.index()
+      }
+
+    })
+
+    myApp.controller("teamsController", function ($scope, teamFactory) {
+      //Insert code here
+    })
+
+    myApp.controller("associationsController", function ($scope, playerFactory, teamFactory) {
+      //Insert code here
+    })
+
+    </script>
+
+  </head>
+  <body>
+    <h1>I am index.html</h1>
+    <div ng-app="myApp">
+      <a href="#!/">Players</a> |
+      <a href="#!/teams">Teams</a> |
+      <a href="#!/associations">Associations</a>
+
+      <div ng-view="">
+      </div>
+    </div>
+  </body>
+</html>

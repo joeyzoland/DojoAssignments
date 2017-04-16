@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script>
+
+    var myApp = angular.module("myApp", ["ngRoute"])
+
+    myApp.config(function ($routeProvider) {
+      $routeProvider
+        .when("/", {
+          templateUrl: "partials/customizeUsers.html"
+        })
+        .when("/list", {
+          templateUrl: "partials/userList.html"
+        })
+        //Do not put a non-partial route in route, or stack overflows
+        .otherwise({
+          redirectTo: "/"
+        })
+    })
+
+    myApp.factory("userFactory", function() {
+      var users = [{first:"Joey", last:"Zoland", language:"Python"}]
+      var factory = {}
+
+      factory.getUsers = function(callback) {
+        callback(users)
+      }
+      factory.addUser = function(object) {
+        users.push(object)
+      }
+      factory.deleteUser = function(index) {
+        users.splice(index, 1)
+      }
+      factory.getUser = function(index, callback) {
+        //Grabs the user and puts their data in an array, alone
+        callback([users[index]])
+      }
+      return factory
+    })
+
+    myApp.controller("usersController", function ($scope, userFactory) {
+      $scope.personArray = []
+
+      $scope.index = function() {
+        userFactory.getUsers(function(data) {
+          $scope.personArray = data
+        })
+      }
+      $scope.index()
+
+      $scope.createPerson = function () {
+        //Note: I just check for undefined on language, as all are undefined before data is entered
+        if ($scope.firstModel != "" && $scope.lastModel != "" && $scope.languageModel != "" && typeof($scope.languageModel) != "undefined") {
+          var newPerson = {first: $scope.firstModel, last: $scope.lastModel, language: $scope.languageModel}
+          userFactory.addUser(newPerson)
+          $scope.index()
+          //Resetting Input fields
+          $scope.firstModel = ""
+          $scope.lastModel = ""
+          $scope.languageModel = ""
+        }
+      }
+      $scope.deletePerson = function (index) {
+        $scope.personArray.splice(index, 1)
+        $scope.index()
+        }
+    })
+
+    myApp.controller("listsController", function ($scope, userFactory) {
+      $scope.personArray = []
+
+      $scope.index = function() {
+        userFactory.getUsers(function(data) {
+          $scope.personArray = data
+        })
+      }
+      $scope.index()
+
+      $scope.viewOne = function(index) {
+        userFactory.getUser(index, function(data) {
+          $scope.personArray = data
+        })
+      }
+
+    })
+
+    </script>
+
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <a href="#!/users">Customize Users</a> | <a href="#!/list">User List</a>
+      <div ng-view="">
+      </div>
+    </div>
+  </body>
+</html>
