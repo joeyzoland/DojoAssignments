@@ -1,8 +1,15 @@
 <div ng-controller="playersController">
   <br>
-  <label for = "name">Name</label>
-  <input type = "text" name = "name" ng-model = "nameModel">
-  <button ng-click = "createPlayer()">Add Player</button>
+  <form name = "playerForm">
+    <label for = "name">Name</label>
+    <input type = "text" name = "name" ng-model = "nameModel" minlength = "3" required>
+    <button ng-click = "createPlayer()">Add Player</button>
+  </form>
+
+  <div ng-messages = "playerForm.name.$error">
+    <p ng-message = "minlength">Please insert a name that is 3 characters or longer</p>
+    <p ng-message = "required">Please insert a name</p>
+  </div>
 
   <table>
     <tr>

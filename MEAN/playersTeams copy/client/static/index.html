@@ -5,11 +5,10 @@
     <title></title>
     <script src="angular/angular.js"></script>
     <script src="angular-route/angular-route.js"></script>
-    <script src="angular-messages/angular-messages.js"></script>
 
     <script>
 
-    var myApp = angular.module("myApp", ["ngRoute", "ngMessages"])
+    var myApp = angular.module("myApp", ["ngRoute"])
 
     myApp.config(function ($routeProvider) {
       $routeProvider
@@ -23,9 +22,6 @@
         })
         .when("/associations", {
           templateUrl: "partials/associations.html"
-        })
-        .when("/show/:teamName", {
-          templateUrl: "partials/team.html"
         })
         .otherwise({
           redirectTo: "/"
@@ -90,43 +86,6 @@
         teams.splice(index, 1)
         callback()
       }
-      factory.addToTeam = function(teamKey, playerName, callback) {
-        for (var i = 0; i < teams.length; i++) {
-          if (teams[i].$$hashKey === teamKey) {
-            //Uses each object's $$hashKey to identify the correct player
-            //then gives them a "team" key and assigns the team's
-            //name as the value
-            teams[i]["players"].push(playerName)
-            callback()
-            break
-          }
-        }
-      }
-      factory.getTeamPlayers = function(team, callback) {
-        for(var i = 0; i < teams.length; i++) {
-          if (teams[i].name === team) {
-            callback(teams[i].players)
-          }
-        }
-      }
-      factory.disassociateTeam = function(team, player, callback) {
-        // console.log("made it to disassociateTeam")
-        // console.log("teams is", teams)
-        // console.log("team (input parameter) is", team)
-        for(var i = 0; i < teams.length; i++) {
-          if (teams[i].name === team) {
-            console.log("found team name match")
-            for (var j = 0; j < teams[i]["players"].length; j++) {
-              console.log("made it to inner for loop")
-              if (teams[i]["players"][j] === player) {
-                teams[i]["players"].splice(j, 1)
-              }
-            break
-            }
-          }
-        }
-      }
-
       return factory
     })
 
@@ -148,8 +107,6 @@
         }
       }
 
-      //Note: This messes up the "show" functionality, as I didn't have
-      //time to remove the player from all relevant team objects
       $scope.removePlayer = function (index) {
         playerFactory.removePlayer(index, $scope.index)
         $scope.index()
@@ -169,18 +126,15 @@
 
       $scope.createTeam = function () {
         if ($scope.nameModel != "" && typeof($scope.nameModel) != "undefined") {
-          teamFactory.addTeam({name: $scope.nameModel, players: []}, $scope.index)
+          teamFactory.addTeam({name: $scope.nameModel}, $scope.index)
           $scope.index()
           $scope.nameModel = ""
         }
       }
 
-      //Note: This messes up the "show" functionality, as I didn't have
-      //time to remove the teams from all relevant player objects
       $scope.removeTeam = function (index) {
         teamFactory.removeTeam(index, $scope.index)
       }
-
     })
 
     myApp.controller("associationsController", function ($scope, playerFactory, teamFactory) {
@@ -199,47 +153,19 @@
       }
       $scope.index()
 
-      $scope.findOldTeam = function (playerName) {
-        console.log("playerName is", playerName)
-        for (var i = 0; i < $scope.playersArray.length; i++) {
-          if ($scope.playersArray[i].name === playerName) {
-            return $scope.playersArray[i].team
-          }
-        }
-      }
-
       $scope.associate = function () {
         if($scope.playerModel && $scope.teamModel) {
-          var oldTeam = $scope.findOldTeam($scope.playerModel.name)
-          if (oldTeam) {
-            teamFactory.disassociateTeam(oldTeam, $scope.playerModel["name"], $scope.index)
-          }
-
           playerKey = $scope.playerModel["$$hashKey"]
           teamName = $scope.teamModel["name"]
           playerFactory.associatePlayer(playerKey, teamName, $scope.index)
-          teamKey = $scope.teamModel["$$hashKey"]
-          playerName = $scope.playerModel["name"]
-          teamFactory.addToTeam(teamKey, playerName, $scope.index)
         }
       }
 
       $scope.disassociate = function (index) {
-        teamFactory.disassociateTeam($scope.playersArray[index]["team"], $scope.playersArray[index]["name"], $scope.index)
         playerFactory.disassociatePlayer(index, $scope.index)
       }
-    })
 
-    myApp.controller("teamController", function ($scope, $routeParams, teamFactory) {
-      $scope.playersArray = []
 
-      $scope.index = function() {
-        teamFactory.getTeamPlayers($routeParams.teamName, function(data) {
-          $scope.playersArray = data
-          console.log($scope.playersArray)
-        })
-      }
-      $scope.index()
 
     })
 
