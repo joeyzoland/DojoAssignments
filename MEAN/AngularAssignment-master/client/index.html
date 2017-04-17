@@ -14,6 +14,7 @@
       */
     /* our angular app modularize, with config */
     var app = angular.module('app', ['ngRoute']);
+
     /* configuration for angular route */
     app.config(function($routeProvider) {
       $routeProvider
@@ -76,6 +77,14 @@
           }
         };
         /* perhaps a comment here about what this does would help us understand it! */
+
+        // This function is activated from the controller; takes in a user object,
+        // an index passed via url, and a callback from the controller, respectively
+
+        // If there is an object in the users array at the index described,
+        // Swap in the new object's values for each key
+
+        // Finally, invokes a callback with the updated user object
         this.update = function(updateUser, idx, functionPassedByControllerAsAnArgToUpdate) {
           if (users[idx]) {
             for (var key in updateUser) {
@@ -129,6 +138,8 @@
     }]);
     /* EDIT CONTROLLER: this controller uses 'this', and the controlValue seems to not update (a bug for you to fix! possibly one new line of code ~ 14 characters, and one modification of something that already exists)*/
     app.controller('editController', ['$scope', 'userFactory', '$location', '$routeParams', function($scope, userFactory, $location, rParams) {
+      //Recording "this" in "self" for use with "this.updateUser" below
+      var self=this
       /* Public Properties */
       this.controlValue = "Current Name:";
       /* Public Methods */
@@ -141,8 +152,8 @@
       this.updateUser = function(){
         userFactory.update($scope.users, rParams.id, function passedToUserFactoryUpdate(userFromFactory){
           $scope.user = userFromFactory;
-          // what is this?
-          this.controlValue = "Updated Name: "
+          // this.controlValue was not referring to the global object...
+          self.controlValue = "Updated Name: "
         });
       }
       /* on load time */
