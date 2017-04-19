@@ -5,10 +5,13 @@ var express = require("express")
     root = __dirname,
     mongoose = require("mongoose")
 
+require("./server/config/mongoose.js")
+
 app.use(express.static(path.join(root, "client")))
 app.use(express.static(path.join(root, "bower_components")))
+
+//Make sure bodyParser is placed before routes, as shown below
 app.use(bodyParser.json())
-require("./server/config/mongoose.js")
 var routes = require("./server/config/routes.js")(app)
 
 app.listen(8000, function() {

@@ -1,0 +1,20 @@
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Show</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <tr ng-repeat = "friend in friends track by $index">
+      <td>{{friend.firstName}} {{friend.lastName}}</td>
+      <td><a ng-href="#!/show/{{friend._id}}"><button>Show</button></a>
+      <td><a ng-href="#!/edit/{{friend._id}}"><button>Update</button></a>
+      <td><button ng-click = "delete(friend._id)">Delete</button></td>
+    </tr>
+  </table>
+
+  <p>Build Filter HERE!!!</p>
+
+  <a ng-href="#!/new"><button>New Friend</button></a>
+</div>

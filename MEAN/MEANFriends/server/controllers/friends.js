@@ -1,37 +1,100 @@
 console.log("reached friends controller")
 
 var mongoose = require("mongoose")
+
+//Gets our model
 var Friend = mongoose.model("Friend")
 
 module.exports = {
   index: function(req, res) {
     Friend.find({}, function(err, friends) {
       if(err) {
-        console.log("got an error on index method")
+        // Amy's recommendation is to render a json object with
+        // standardized keys so it's easy to see if there was an
+        // error on the client side
+        res.json({message: "Error", error: err})
+        // Recommended to use this on the success side also
       }
       else {
-        res.json({placeholder:friends})
+        // console.log("reached friends controller index route")
+        // console.log(friends)
+        res.json({message: "Success", objects: friends})
       }
     })
   },
   create: function(req, res) {
-    res.json({placeholder:"create"})
+    // console.log("req.body in friends.js is", req.body)
+    var friend = new Friend(req.body)
+    friend.save(function (err) {
+      if(err) {
+          // console.log("err", err)
+          res.json({message: "Error", error: err})
+      } else {
+          //Don't have to res.json here because index will do it
+          module.exports.index(req, res)
+      }
+    })
   },
   update: function(req, res) {
-    res.json({placeholder:"update"})
-  },
-  delete: function(req, res) {
-    res.json({placeholder:"delete"})
-  },
-  show: function(req, res) {
-    //Note: Passing in name now for the purposes of testing
-    //Id is just what's put in the url
-    Friend.find({name: req.params.id}, function(err, friends) {
-      if(err) {
-        console.log("got an error on index method")
+    Friend.findOne({_id: req.params.id}, function(err, friend) {
+      if (err) {
+        // console.log("Unable to find friend for editing")
       }
       else {
-        res.json({placeholder:friends})
+        // console.log("Found friend", friend)
+        if (req.body.firstName) {
+          friend.firstName = req.body.firstName
+          // console.log("reached friend.firstName editing")
+        }
+        if (req.body.lastName) {
+          friend.lastName = req.body.lastName
+          // console.log("reached friend.lastName editing")
+        }
+        if (req.body.birthday) {
+          friend.birthday = req.body.birthday
+          // console.log("reached friend.birthday editing")
+        }
+        // console.log("Friend after update", friend)
+        friend.save(function(err) {
+          if(err) {
+            // console.log(err)
+            res.json({message: "Error", error: err})
+          }
+          else {
+            module.exports.index(req, res)
+          }
+        })
+      }
+    })
+  },
+  delete: function(req, res) {
+    // console.log("req.params._id is", req.params.id)
+    // console.log("req is", req)
+    Friend.remove({_id: req.params.id}, function (err) {
+      if (err) {
+          // console.log("wtf @ not deleting");
+          res.json({message: "Error", error: err})
+      } else {
+          // console.log("deleting");
+          //Note: I don't have to res.json because index will do it
+          module.exports.index(req, res)
+      }
+    })
+  },
+  show: function(req, res) {
+    // console.log("reached show")
+    //Note: Passing in name now for the purposes of testing
+    //Id is just what's put in the url
+
+    // Friend.find({first: req.params.id}, function(err, friend) {
+    Friend.find({_id: req.params.id}, function(err, friend) {
+      if(err) {
+        // console.log(err)
+        res.json({message: "Error", error: err})
+      }
+      else {
+        // console.log("reached friends controller show route")
+        res.json({message: "Success", objects: friend})
       }
     })
   }
