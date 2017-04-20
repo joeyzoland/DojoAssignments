@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>MEAN Friends, but not too mean</title>
+    <script src='angular/angular.js'></script>
+    <script src='angular-route/angular-route.js'></script>
+    <script src='assets/app.js'></script>
+    <script src='assets/factories/friendsFactory.js'></script>
+    <script src='assets/controllers/newController.js'></script>
+    <script src='assets/controllers/editController.js'></script>
+    <script src='assets/controllers/listController.js'></script>
+    <script src='assets/controllers/showController.js'></script>
+  </head>
+
+  <body>
+    <a href="#!/">Create</a> | <a href="#!/list">List</a>
+    <div ng-view="">
+    </div>
+  </body>
+</html>
