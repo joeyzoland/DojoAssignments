@@ -1,0 +1,42 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.header{
+  background-color: blue;
+  margin-bottom: 10px;
+}
+.header_name{
+  display: inline-block;
+  background-color: yellow;
+}
+.header_dashboard{
+  display: inline-block;
+  margin-right: 0px;
+  background-color: orange;
+}
+/*.about{
+  display: inline-block;
+}
+.projects{
+  display: inline-block;
+}
+.contact{
+  display: inline-block;
+}*/
+.picture_summary{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: green;
+}
+.text_summary{
+  background-color: orange;
+}
+.text_summary h2{
+  margin-top: 0px;
+}
+.contact_info{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: red;
+}
