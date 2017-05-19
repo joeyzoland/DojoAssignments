@@ -9,6 +9,7 @@
     <meta name = "description" content = "This portfolio webpage serves as a short summary of Joseph Zoland's accomplishments.">
 
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap-social.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="index.css">
 
@@ -31,23 +32,52 @@
      <!-- Include all compiled plugins (below), or include individual files as needed -->
      <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
+     <script>
+     $(document).ready(function(){
+         // Add smooth scrolling to all links
+         $("a").on('click', function(event) {
+
+             // Make sure this.hash has a value before overriding default behavior
+             if (this.hash !== "") {
+                 // Prevent default anchor click behavior
+                 event.preventDefault();
+                //  console.log("this.hash is", this.hash)
+
+                 // Store hash
+                 var hash = this.hash;
+
+                 // Using jQuery's animate() method to add smooth page scroll
+                 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                 $('html, body').animate({
+                     scrollTop: $(hash).offset().top
+                     }, 800, function(){
+
+                         // Add hash (#) to URL when done scrolling (default click behavior)
+                        //  console.log("window.location.hash is", window.location.hash)
+                         window.location.hash = hash;
+                 });
+              } // End if
+         });
+     });
+     </script>
+
     <div class = "wrapper">
-      <div class = "header">
+      <div class = "header navbar-fixed-top">
         <h3 class = "header_name">Joseph "Joey" Zoland</h3>
-        <div class = "header_dashboard">
-          <h4> <a href = "#text_summary">About</a> | <a href = "#contact_info">Contact</a> </h4>
+        <div id = "header_dashboard" class = "navbar-right">
+          <h3> <a class = "page-scroll" href = "#text_summary">About</a> | <a href = "#projects_summary">Projects</a> | <a href = "#contact_info">Contact</a> </h3>
         </div>
       </div>
       <div id = "picture_summary">
-        <img class = "profile_pic" src = "profile_pic.jpg" alt = "Profile Picture">
+        <img id = "profile_pic" src = "profile_pic.jpg" alt = "Profile Picture">
         <h1>Joseph "Joey" Zoland</h1>
-        <hr style = "color: black">
+        <hr style = "border-color: black">
         <h3>Full-stack Developer</h3>
         <h5>Experience with Swift 3, Javascript, and Python</h5>
       </div>
 
       <div id = "text_summary">
-        <h2>About Me</h2>
+        <h1>About Me</h1>
 
         <p>
           I am a San Jose native, and have lived in the Silicon Valley my entire life.  I obtained my B.A. and M.A. degrees in psychology
@@ -64,10 +94,20 @@
         </p>
       </div>
 
+      <div id = "projects_summary">
+        <h1>Projects</h1>
+      </div>
+
       <div id = "contact_info">
-        <h5>If you want to work together on a project, let's talk!  Shoot me an email or give me a call:</h5>
-        <h5>Email: <a href = "mailto:joeyzoland@gmail.com">joeyzoland@gmail.com</a></h5>
-        <h5>Phone: <a href = "tel:415-562-7260">(415)562-7260</a></h5>
+        <h1>Contact Information</h1>
+        <br>
+        <h4>If you want to work together on a project, let's talk!  Shoot me an email or give me a call:</h4>
+        <br>
+        <h4>Email: <a href = "mailto:joeyzoland@gmail.com">joeyzoland@gmail.com</a></h4>
+        <h4>Phone: <a href = "tel:415-562-7260">(415)562-7260</a></h4>
+        <a class="btn btn-social-icon btn-twitter">
+          <span class="fa fa-twitter"></span>
+        </a>
       </div>
 
 
