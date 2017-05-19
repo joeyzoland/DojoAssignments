@@ -57,6 +57,11 @@
 #text_summary h1{
   margin-top: 0px;
 }
+#text_summary button{
+  height: 32px;
+  width: 90px;
+  font-weight: bold;
+}
 #projects_summary{
   text-align: center;
   padding: 100px;
@@ -68,4 +73,9 @@
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: orange;
+}
+.btn{
+  width: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
