@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="greatNumberGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Great Number Game!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvG-I5-2HX">
+                                <rect key="frame" x="16" y="20" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am thinking of a number between 1 and 100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBT-vN-ckE">
+                                <rect key="frame" x="0.0" y="71" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a guess!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTD-2U-Jpg">
+                                <rect key="frame" x="16" y="122" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVi-Zp-vs8">
+                                <rect key="frame" x="152.5" y="333" width="70" height="30"/>
+                                <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="kKh-lC-cLM"/>
+                                    <constraint firstAttribute="height" constant="30" id="mi4-Lg-vs7"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P05-Dr-4sB"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-OV-lR8">
+                                <rect key="frame" x="137.5" y="218" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hv8-D6-aM3"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ykp-l0-BGs"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oBT-vN-ckE" secondAttribute="trailing" id="1dn-aF-MHi"/>
+                            <constraint firstItem="oBT-vN-ckE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4te-X8-DK4"/>
+                            <constraint firstItem="oBT-vN-ckE" firstAttribute="top" secondItem="BvG-I5-2HX" secondAttribute="bottom" constant="30" id="5c3-Qd-EK0"/>
+                            <constraint firstItem="iVi-Zp-vs8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="94p-zP-XYh"/>
+                            <constraint firstItem="iVi-Zp-vs8" firstAttribute="top" secondItem="s1l-OV-lR8" secondAttribute="bottom" constant="75" id="9d0-N3-ae4"/>
+                            <constraint firstItem="BvG-I5-2HX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A67-L2-Y5u"/>
+                            <constraint firstItem="BvG-I5-2HX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="F2m-EL-Alo"/>
+                            <constraint firstItem="aTD-2U-Jpg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="G8G-6x-X6E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aTD-2U-Jpg" secondAttribute="trailing" id="N2Y-h2-VKa"/>
+                            <constraint firstItem="aTD-2U-Jpg" firstAttribute="top" secondItem="oBT-vN-ckE" secondAttribute="bottom" constant="30" id="Uc0-Df-rPW"/>
+                            <constraint firstItem="s1l-OV-lR8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o9z-1Z-d2Y"/>
+                            <constraint firstItem="BvG-I5-2HX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uzM-vi-ulY"/>
+                            <constraint firstItem="s1l-OV-lR8" firstAttribute="top" secondItem="aTD-2U-Jpg" secondAttribute="bottom" constant="75" id="wq5-ss-yNh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guessedNumber" destination="s1l-OV-lR8" id="Qc7-71-dra"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>

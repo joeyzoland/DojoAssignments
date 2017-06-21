@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F44538851EF9E9C700344E61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44538841EF9E9C700344E61 /* AppDelegate.swift */; };
+		F44538871EF9E9C700344E61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44538861EF9E9C700344E61 /* ViewController.swift */; };
+		F445388A1EF9E9C700344E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44538881EF9E9C700344E61 /* Main.storyboard */; };
+		F445388D1EF9E9C700344E61 /* greatNumberGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F445388B1EF9E9C700344E61 /* greatNumberGame.xcdatamodeld */; };
+		F445388F1EF9E9C700344E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F445388E1EF9E9C700344E61 /* Assets.xcassets */; };
+		F44538921EF9E9C700344E61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44538901EF9E9C700344E61 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F44538811EF9E9C700344E61 /* greatNumberGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = greatNumberGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44538841EF9E9C700344E61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F44538861EF9E9C700344E61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F44538891EF9E9C700344E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F445388C1EF9E9C700344E61 /* greatNumberGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = greatNumberGame.xcdatamodel; sourceTree = "<group>"; };
+		F445388E1EF9E9C700344E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F44538911EF9E9C700344E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F44538931EF9E9C700344E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F445387E1EF9E9C700344E61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F44538781EF9E9C600344E61 = {
+			isa = PBXGroup;
+			children = (
+				F44538831EF9E9C700344E61 /* greatNumberGame */,
+				F44538821EF9E9C700344E61 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F44538821EF9E9C700344E61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F44538811EF9E9C700344E61 /* greatNumberGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F44538831EF9E9C700344E61 /* greatNumberGame */ = {
+			isa = PBXGroup;
+			children = (
+				F44538841EF9E9C700344E61 /* AppDelegate.swift */,
+				F44538861EF9E9C700344E61 /* ViewController.swift */,
+				F44538881EF9E9C700344E61 /* Main.storyboard */,
+				F445388E1EF9E9C700344E61 /* Assets.xcassets */,
+				F44538901EF9E9C700344E61 /* LaunchScreen.storyboard */,
+				F44538931EF9E9C700344E61 /* Info.plist */,
+				F445388B1EF9E9C700344E61 /* greatNumberGame.xcdatamodeld */,
+			);
+			path = greatNumberGame;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F44538801EF9E9C700344E61 /* greatNumberGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44538961EF9E9C700344E61 /* Build configuration list for PBXNativeTarget "greatNumberGame" */;
+			buildPhases = (
+				F445387D1EF9E9C700344E61 /* Sources */,
+				F445387E1EF9E9C700344E61 /* Frameworks */,
+				F445387F1EF9E9C700344E61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = greatNumberGame;
+			productName = greatNumberGame;
+			productReference = F44538811EF9E9C700344E61 /* greatNumberGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F44538791EF9E9C600344E61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Joseph Zoland";
+				TargetAttributes = {
+					F44538801EF9E9C700344E61 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F445387C1EF9E9C600344E61 /* Build configuration list for PBXProject "greatNumberGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F44538781EF9E9C600344E61;
+			productRefGroup = F44538821EF9E9C700344E61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F44538801EF9E9C700344E61 /* greatNumberGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F445387F1EF9E9C700344E61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44538921EF9E9C700344E61 /* LaunchScreen.storyboard in Resources */,
+				F445388F1EF9E9C700344E61 /* Assets.xcassets in Resources */,
+				F445388A1EF9E9C700344E61 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F445387D1EF9E9C700344E61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44538871EF9E9C700344E61 /* ViewController.swift in Sources */,
+				F44538851EF9E9C700344E61 /* AppDelegate.swift in Sources */,
+				F445388D1EF9E9C700344E61 /* greatNumberGame.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F44538881EF9E9C700344E61 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44538891EF9E9C700344E61 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F44538901EF9E9C700344E61 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44538911EF9E9C700344E61 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F44538941EF9E9C700344E61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F44538951EF9E9C700344E61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F44538971EF9E9C700344E61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = greatNumberGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingdojo.greatNumberGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F44538981EF9E9C700344E61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = greatNumberGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingdojo.greatNumberGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F445387C1EF9E9C600344E61 /* Build configuration list for PBXProject "greatNumberGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44538941EF9E9C700344E61 /* Debug */,
+				F44538951EF9E9C700344E61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44538961EF9E9C700344E61 /* Build configuration list for PBXNativeTarget "greatNumberGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44538971EF9E9C700344E61 /* Debug */,
+				F44538981EF9E9C700344E61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F445388B1EF9E9C700344E61 /* greatNumberGame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F445388C1EF9E9C700344E61 /* greatNumberGame.xcdatamodel */,
+			);
+			currentVersion = F445388C1EF9E9C700344E61 /* greatNumberGame.xcdatamodel */;
+			path = greatNumberGame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F44538791EF9E9C600344E61 /* Project object */;
+}
