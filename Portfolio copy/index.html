@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Joseph Zoland's Portfolio Page</title>
+    <meta name = "description" content = "This portfolio webpage serves as a short summary of Joseph Zoland's accomplishments.">
+
+    <link href="bootstrap-social-gh-pages/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
+    <link href="bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+  </head>
+  <body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+     <script>
+     $(document).ready(function(){
+         // Add smooth scrolling to all links
+         $("a").on('click', function(event) {
+
+             // Make sure this.hash has a value before overriding default behavior
+             if (this.hash !== "") {
+                 // Prevent default anchor click behavior
+                 event.preventDefault();
+                //  console.log("this.hash is", this.hash)
+
+                 // Store hash
+                 var hash = this.hash;
+
+                 // Using jQuery's animate() method to add smooth page scroll
+                 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                 $('html, body').animate({
+                     scrollTop: $(hash).offset().top
+                     }, 800, function(){
+
+                         // Add hash (#) to URL when done scrolling (default click behavior)
+                        //  console.log("window.location.hash is", window.location.hash)
+                         window.location.hash = hash;
+                 });
+              } // End if
+         });
+     });
+     </script>
+
+    <div class = "wrapper">
+      <div class = "header navbar-fixed-top">
+        <h3 class = "header_name">Joseph "Joey" Zoland</h3>
+        <div id = "header_dashboard" class = "navbar-right">
+          <h3> <a class = "page-scroll" href = "#text_summary">About</a> | <a href = "#projects_summary">Projects</a> | <a href = "#contact_info">Contact</a> </h3>
+        </div>
+      </div>
+      <div id = "picture_summary">
+        <img id = "profile_pic" src = "profile_pic.jpg" alt = "Profile Picture">
+        <h1>Joseph "Joey" Zoland</h1>
+        <hr style = "border-color: black">
+        <h3>Full-stack Developer</h3>
+        <h5>Experience with Swift 3, Javascript, and Python</h5>
+      </div>
+
+      <div id = "text_summary">
+        <h1>About Me</h1>
+
+        <p>
+          I am a San Jose native, and have lived in the Silicon Valley my entire life.  I obtained my B.A. and M.A. degrees in psychology
+          from San Jose State University.  Whenever possible, I tailored my coursework towards educational psychology; I have always
+          loved learning, and I feel very fortunate to now be in an industry where I get to learn something new each and every day.
+        </p>
+
+        <p>
+          After obtaining exposure to coding through Massive Open Online Courses, including EdX and Udacity, as well as utilizing python
+          for data analysis in market research, I decided to transfer over to coding full-time. To this end, I enrolled in Coding Dojo's
+          intense boot camp program, which includes 1000 hours of instruction for 3 full stacks of development within 14 weeks. The breadth
+          of the curriculum ensures that students not only learn how to code in 3 stacks, but they also learn the underlying concepts behind coding
+          by being able to compare and contrast the strengths and weaknesses of each stack.
+        </p>
+
+        <button><a href = "./Joseph Zoland Resume May 18 2017.pdf">Resume</a></button>
+      </div>
+
+      <div id = "projects_summary">
+        <h1>Projects</h1>
+
+        <div id='container'>
+          <div id = 'redDude'></div>
+          <div id='grounds'></div>
+        </div>
+        <div id='score'>0</div>
+
+
+        <script>
+
+          var redDude = {
+            x:60,
+            y:480
+          }
+
+          var groundsArray = [];
+
+          var groundDivs = null;
+
+          var speed = 0;
+
+          var jumping = false;
+
+          var pause = false;
+
+          var cheatArray = [];
+
+          var displayRedDude = function(){
+            document.getElementById("redDude").style['top']= redDude.y + "px";
+            document.getElementById("redDude").style['left']= redDude.x + "px";
+          }
+
+          function generateFirstLevelArray(){
+            var output = []
+            for (var i = 0; i < 6; i++){
+              var outputtedVariable = {
+              x: 60 * (i + 1 + Math.floor(i/2)),
+              y: 480 - (Math.floor(i/2) * 60),
+              type: 1,
+              stepped: false,
+              id: i
+              }
+              output.push(outputtedVariable)
+            }
+            return output
+          }
+
+          function generateLevel(firstLevelArray){
+            var output = ""
+            groundsArray = firstLevelArray
+            for (var i = 0; i < firstLevelArray.length; i++){
+              output += "<div class = 'normGround' style='left:" + firstLevelArray[i].x + "px; top:" + firstLevelArray[i].y + "px;'></div>"
+            }
+            document.getElementById("grounds").innerHTML = output;
+          }
+
+          function onGround(){
+            for (var i = 0; i < groundsArray.length; i++){
+              if (Math.abs(redDude.x - groundsArray[i].x) < 30 && redDude.y == groundsArray[i].y){
+                if (groundsArray[i].type == 2 && groundsArray[i].stepped == false){
+
+                  //Changed vanishId into an integer so it is passed by value; otherwise, it would be passed by reference and changed by the time the callback is invoked
+                  var vanishId = parseInt(groundsArray[i].id)
+
+                  groundsArray[i].stepped = true
+                  groundDivs[i].style.backgroundPosition = "0px -120px"
+                  setTimeout(function(){
+                    for (var i = 0; i < groundDivs.length; i++){
+                      if (groundsArray[i].id == vanishId){
+                        groundDivs[i].style.display = "none";
+                        groundsArray[i].y = 600
+                        break
+                      }
+                    }
+                  }, 500)
+                }
+                else if (groundsArray[i].type == 3 && groundsArray[i].stepped == false){
+                  if (groundsArray[i].originalY - groundsArray[i].y < 120){
+                    groundsArray[i].y -= 12;
+                    redDude.y -= 12;
+                    groundDivs[i].style["top"] = groundsArray[i].y + "px"
+                  }
+                }
+                return true
+              }
+            }
+            return false
+          }
+
+          function gravity(){
+            if (onGround() == false & jumping == false){
+              redDude.y += 12
+            }
+          }
+
+          function tryAgain(){
+            //This function assumes the lower bound of the screen is 600
+            if (redDude.y>=600){
+              var decision = confirm("You scored " + document.getElementById("score").innerHTML + " points. Would you like to play again?")
+              if (decision == true){
+
+                generateLevel(generateFirstLevelArray())
+                speed = 0
+                redDude.x = 60
+                redDude.y = 480
+                document.getElementById("redDude").style.backgroundPosition = "-60px 0px";
+                document.getElementById("score").innerHTML = 0
+              }
+              else{
+                var secondDecision = window.confirm("If you are sure you would like to quit playing, click 'OK' to close the game.")
+                if (secondDecision == true){
+                  window.close()
+                }
+                else{
+                  tryAgain()
+                }
+              }
+            }
+          }
+
+          //If redDude would go off the left side of the screen due to the screen's movement, pushes him to the right to stay within it
+          function outOfLeftBound(){
+            if (redDude.x - speed < 0){
+              redDude.x = redDude.x - speed + 60
+            }
+            else{
+              redDude.x -= speed
+            }
+          }
+
+          function moveScreen(){
+
+            function deleteGround(){
+              function assignId(oldGroundId){
+                if (oldGroundId > 12){
+                  return oldGroundId - 6
+                }
+                else{
+                  return oldGroundId + 6
+                }
+              }
+              if(groundsArray[0].x - speed < 0){
+                newGroundId = assignId(groundsArray[0].id)
+                groundsArray = groundsArray.slice(1)
+                groundDivs[0].outerHTML = ""
+
+                //originalY is used so that the second rocketGround in a set spawns at the original position of the first rocketGround in the set, rather than its current position after potential movement
+                var newGround = {"stepped": false, "id": newGroundId}
+                if(groundsArray[groundsArray.length - 1].x > 480){
+                  newGround.x = groundsArray[groundsArray.length - 1].x + 60
+                  newGround.y = groundsArray[groundsArray.length - 1].originalY
+                  newGround.originalY = newGround.y
+                  newGround.type = groundsArray[groundsArray.length - 1].type
+                }
+                else{
+                  newGround.x = groundsArray[groundsArray.length - 1].x + 120
+                  var randType = 12 * Math.random()
+                  var randFloor = 6 * Math.random()
+
+                  if (randType < 8){
+                    newGround.type = 1
+                  }
+                  else if (randType < 10){
+                    newGround.type = 2
+                  }
+                  else{
+                    newGround.type = 3
+                  }
+
+                  if(groundsArray[groundsArray.length - 1].y == 480){
+                    if(randFloor < 3){
+                      newGround.y = 480
+                    }
+                    else{
+                      newGround.y = 420
+                    }
+                  }
+                  else if(groundsArray[groundsArray.length - 1].y == 420){
+                    if(randFloor < 2){
+                      newGround.y = 480
+                    }
+                    else if(randFloor < 4){
+                      newGround.y = 420
+                    }
+                    else{
+                      newGround.y = 360
+                    }
+                  }
+                  //Otherwise, y is the bottom value, 360
+                  else{
+                    if(randFloor < 2){
+                      newGround.y = 480
+                    }
+                    else if(randFloor < 4){
+                      newGround.y = 420
+                    }
+                    else{
+                      newGround.y = 360
+                    }
+                  }
+                  newGround.originalY = newGround.y
+                }
+
+                groundsArray.push(newGround)
+
+                var output = "<div class = "
+                if (newGround.type == 1){
+                  output += "'normGround'"
+                }
+                else if (newGround.type == 2){
+                  output += "'vanishGround'"
+                }
+                else{
+                  output += "'rocketGround'"
+                }
+
+                output += " style='left:" + newGround.x + "px; top:" + newGround.y + "px;'></div>"
+                document.getElementById("grounds").innerHTML += output;
+              }
+            }
+            if (speed <= 15){
+              speed += 0.01
+            }
+
+            deleteGround()
+
+            for (var i = 0; i < groundsArray.length; i++){
+              groundsArray[i].x -= speed;
+              groundDivs[i].style["left"] = groundsArray[i].x
+            }
+            outOfLeftBound()
+          }
+
+          //leftBorder returns true if redDude is right before the left border of the screen; similar functionality for rightBorder
+          //These functions are used in conjunection with mainControls to stop movement beyond the borders of the screen
+          function leftBorder(){
+            if (redDude.x < 60){
+              return true
+            }
+            return false
+          }
+          function rightBorder(){
+            if (redDude.x >= 480){
+              return true
+            }
+            return false
+          }
+
+          function mainControls(){
+            document.onkeydown = function(data){
+              // console.log(data.keyCode)
+              if ((data.keyCode == 37 || data.keyCode == 65) && leftBorder() == false){
+                redDude.x-=60
+                document.getElementById("redDude").style.backgroundPosition = "0px 0px";
+              }
+              else if ((data.keyCode == 39 || data.keyCode == 68) && rightBorder() == false){
+                redDude.x+=60
+                document.getElementById("redDude").style.backgroundPosition = "-60px 0px";
+              }
+              else if ((data.keyCode == 38 || data.keyCode == 87) && onGround() == true){
+                jumping = true
+                redDude.y -=48
+                displayRedDude()
+                setTimeout(function(){
+                  redDude.y-=36
+                  displayRedDude()
+                  setTimeout(function(){
+                    redDude.y-=24
+                    displayRedDude()
+                    setTimeout(function(){
+                      redDude.y-=12
+                      jumping = false
+                    }, 50)
+                  }, 50)
+                }, 50)
+              }
+              else if ((data.keyCode == 40 || data.keyCode == 83) && onGround() == true){
+                redDude.y += 12
+              }
+              //Pausing
+              else if (data.keyCode == 13){
+                pause = true
+              }
+              displayRedDude()
+            }
+          }
+
+          function gameReRuns(){
+            if (pause == false){
+              gravity()
+              tryAgain()
+              displayRedDude()
+              moveScreen()
+              document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML) + (speed * 100)
+            }
+            else{
+              document.onkeydown = function(data){
+                if(data.keyCode != 13 && cheatArray.length < 10){
+                  cheatArray.push(data.keyCode)
+                  if (cheatArray == "38,38,40,40,37,39,37,39,66,65"){
+                    if (parseInt(document.getElementById("score").innerHTML) < 30000000){
+                      document.getElementById("score").innerHTML = 30000000 + parseInt(document.getElementById("score").innerHTML)
+                    }
+                  }
+                }
+                else if(data.keyCode == 13){
+                  cheatArray = []
+                  pause = false
+                  mainControls()
+                }
+              }
+            }
+
+            //Make a function to generate firstLevelArray
+
+          }
+          window.alert("RED DUDE\nControls:\n\nLeft Arrow or A: Move left\nUp Arrow or W: Jump\nRight Arrow or D: Move right\nDown Arrow or S: Fall\nEnter: Pause and unpause")
+
+          generateLevel(generateFirstLevelArray())
+          groundDivs = document.getElementById("grounds").getElementsByTagName("div")
+          displayRedDude()
+
+          mainControls()
+          setInterval(gameReRuns, 50)
+
+        </script>
+
+      </div>
+
+      <div id = "contact_info">
+        <h1>Contact Information</h1>
+        <br>
+        <h4>If you want to work together on a project, let's talk!  Shoot me an email or give me a call:</h4>
+        <br>
+        <h4>Email: <a href = "mailto:joeyzoland@gmail.com">joeyzoland@gmail.com</a></h4>
+        <h4>Phone: <a href = "tel:415-562-7260">(415)562-7260</a></h4>
+        <a class="btn btn-social-icon btn-linkedin" href = "https://www.linkedin.com/in/josephzoland/">
+          <span class="fa fa-linkedin"></span>
+        </a>
+        <a class="btn btn-social-icon btn-github" href = "https://github.com/joeyzoland">
+          <span class="fa fa-github"></span>
+        </a>
+      </div>
+
+
+
+    </div>
+  </body>
+</html>

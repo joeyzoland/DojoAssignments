@@ -70,6 +70,52 @@
   color: #cccccc;
   background-color: #4c4c4c;
 }
+
+#container{
+  background: url('redDude2.png') -600px -1200px;
+  background-size: 300%;
+  width:600px;
+  height:600px;
+}
+#redDude{
+  background: url('redDude2.png') -60px 0px;
+  background-size: 300%;
+  width:60px;
+  height:60px;
+  position: absolute;
+}
+.normGround{
+  background: url('redDude2.png') -120px 0px;
+  background-size: 300%;
+  width:60px;
+  height:60px;
+  position: absolute;
+}
+.vanishGround{
+  background: url('redDude2.png') -120px -60px;
+  background-size: 300%;
+  width:60px;
+  height:60px;
+  position: absolute;
+}
+.rocketGround{
+  background: url('redDude2.png') 0px -60px;
+  background-size: 300%;
+  width:60px;
+  height:60px;
+  position: absolute;
+}
+#score{
+  position:absolute;
+  border:10px solid red;
+  top:20px;
+  left:650px;
+  background-color:white;
+  padding:10px;
+  font-size:30px;
+  font-family: Arial;
+}
+
 #contact_info{
   padding: 100px;
   text-align: center;

@@ -36,6 +36,9 @@ class ViewController: UIViewController {
         if (outputScreen.text == "0"){
             outputScreen.text = String(sender.tag)
         }
+        else if (outputScreen.text == "-0"){
+            outputScreen.text = String("-") + String(sender.tag)
+        }
         else {
             outputScreen.text = outputScreen.text! + String(sender.tag)
         }
@@ -101,12 +104,6 @@ class ViewController: UIViewController {
             outputScreen.text = outputScreen.text! + String(".")!
         }
     }
-    
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         for i in allButtons {

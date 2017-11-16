@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Joseph Zoland's Portfolio Page</title>
+    <meta name = "description" content = "This portfolio webpage serves as a short summary of Joseph Zoland's accomplishments.">
+
+    <link href="bootstrap-social-gh-pages/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
+    <link href="bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+  </head>
+  <body>
+
+    <!-- <style type="text/css">
+      #calculatorVideo{
+        height: 620px;
+        width: 327px;
+      }
+      #tetrisVideo{
+        height: 620px;
+        width: 327px;
+      }
+    </style> -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+     <script>
+     $(document).ready(function(){
+         // Add smooth scrolling to all links
+         $("a").on('click', function(event) {
+
+             // Make sure this.hash has a value before overriding default behavior
+             if (this.hash !== "") {
+                 // Prevent default anchor click behavior
+                 event.preventDefault();
+                //  console.log("this.hash is", this.hash)
+
+                 // Store hash
+                 var hash = this.hash;
+
+                 // Using jQuery's animate() method to add smooth page scroll
+                 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                 $('html, body').animate({
+                     scrollTop: $(hash).offset().top
+                     }, 800, function(){
+
+                         // Add hash (#) to URL when done scrolling (default click behavior)
+                        //  console.log("window.location.hash is", window.location.hash)
+                         window.location.hash = hash;
+                 });
+              } // End if
+         });
+     });
+
+     </script>
+
+    <div class = "wrapper">
+      <div class = "header navbar-fixed-top">
+        <h3 class = "header_name">Joseph "Joey" Zoland</h3>
+        <div id = "header_dashboard" class = "navbar-right">
+          <h3> <a class = "page-scroll" href = "#text_summary">About</a> | <a href = "#projects_summary">Projects</a> | <a href = "#contact_info">Contact</a> </h3>
+        </div>
+      </div>
+      <div id = "picture_summary">
+        <img id = "profile_pic" src = "profile_pic.jpg" alt = "Profile Picture">
+        <h1>Joseph "Joey" Zoland</h1>
+        <hr style = "border-color: black">
+        <h3>Full-stack Developer</h3>
+        <h5>Experience with Swift 3, Javascript, and Python</h5>
+      </div>
+
+      <div id = "text_summary">
+        <h1>About Me</h1>
+
+        <p>
+          I am a San Jose native, and have lived in the Silicon Valley my entire life.  I obtained my B.A. and M.A. degrees in psychology
+          from San Jose State University.  Whenever possible, I tailored my coursework towards educational psychology; I have always
+          loved learning, and I feel very fortunate to now be in an industry where I get to learn something new each and every day.
+        </p>
+
+        <p>
+          After obtaining exposure to coding through Massive Open Online Courses, including EdX and Udacity, as well as utilizing python
+          for data analysis in market research, I decided to transfer over to coding full-time. To this end, I enrolled in Coding Dojo's
+          intense boot camp program, which includes 1000 hours of instruction for 3 full stacks of development within 14 weeks. The breadth
+          of the curriculum ensures that students not only learn how to code in 3 stacks, but they also learn the underlying concepts behind coding
+          by being able to compare and contrast the strengths and weaknesses of each stack.
+        </p>
+
+        <button><a href = "./Joseph Zoland Resume May 18 2017.pdf">Resume</a></button>
+      </div>
+
+      <div id = "projects_summary">
+        <h1>Projects</h1>
+        <br>
+        <p>Red Dude: Game Demo</p>
+        <iframe width="850" height="620" src="redDude.html" frameborder="0" allowfullscreen scrolling="no"></iframe>
+
+        <iframe id="calculatorVideo" width="560" height="315" src="https://www.youtube.com/embed/mh2IxRj8zN0" frameborder="0" allowfullscreen></iframe>
+
+        <iframe id="tetrisVideo" width="560" height="315" src="https://www.youtube.com/embed/BjFh6KT7yAw" frameborder="0" gesture="media" allowfullscreen></iframe>
+
+      </div>
+
+      <div id = "contact_info">
+        <h1>Contact Information</h1>
+        <br>
+        <h4>If you want to work together on a project, let's talk!  Shoot me an email or give me a call:</h4>
+        <br>
+        <h4>Email: <a href = "mailto:joeyzoland@gmail.com">joeyzoland@gmail.com</a></h4>
+        <h4>Phone: <a href = "tel:415-562-7260">(415)562-7260</a></h4>
+        <a class="btn btn-social-icon btn-linkedin" href = "https://www.linkedin.com/in/josephzoland/">
+          <span class="fa fa-linkedin"></span>
+        </a>
+        <a class="btn btn-social-icon btn-github" href = "https://github.com/joeyzoland">
+          <span class="fa fa-github"></span>
+        </a>
+      </div>
+
+
+
+    </div>
+  </body>
+</html>
