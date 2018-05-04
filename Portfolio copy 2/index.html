@@ -47,35 +47,6 @@
               } // End if
          });
 
-         // var activeDemoId = "redDudeGame";
-         var activeDemoId = "tetrisVideo";
-         var swappingProjects = false;
-         $("button.demo").click(function(){
-           if (swappingProjects === false && activeDemoId != this.value){
-             swappingProjects = true;
-             const self = this;
-             if ($("#" + activeDemoId).attr("class") == "video"){
-               console.log("video paused")
-               $("#" +  activeDemoId)[0].contentWindow.postMessage( '{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-             }
-             $("#" + activeDemoId).slideUp();
-             setTimeout(function(){
-               // $("#" + activeDemoId).remove()
-               $("#" + self.value).slideDown();
-               activeDemoId = self.value;
-               swappingProjects = false;
-             }, 500)
-           }
-         })
-
-         // $('#check').on('click', function() {
-         //   console.log("check button is being pressed")
-         //   // console.log(document.getElementById("redDudeGame")
-         //   document.domain = "cheese"
-         //   console.log(document.domain)
-         //   console.log($("#redDudeGame").contents().find("#container"))
-         // })
-
      });
 
      </script>
@@ -106,33 +77,34 @@
 
         <p>
           After obtaining exposure to coding through Massive Open Online Courses, including EdX and Udacity, as well as utilizing python
-          for data analysis in market research, I decided to transfer over to coding full-time. To this end, I enrolled in Coding Dojo's
-          intense boot camp program, which includes 1000 hours of instruction for 3 full stacks of development within 14 weeks. The breadth
-          of the curriculum ensures that students not only learn how to code in 3 stacks, but they also learn the underlying concepts behind coding
-          by being able to compare and contrast the strengths and weaknesses of each stack.
+          for data analysis in market research, I decided to transition into coding full-time. To this end, I enrolled in Coding Dojo's
+          intense boot camp program, which includes 1000 hours of instruction for 3 full stacks of development within 14 weeks. After graduating with top honors in each stack, I joined a Scrum team that is currently designing a silent bidding auction website.  Upon completion, this website will facilitate fundraising efforts for the Valley Medical Center Foundation.
         </p>
 
-        <button><a href = "./Joseph Zoland Resume May 18 2017.pdf">Resume</a></button>
+        <button><a href = "./Joseph Zoland Resume-May 2018.pdf">Resume</a></button>
       </div>
 
       <div id = "projects_summary">
         <h1>Projects</h1>
 
         <br>
-        <div id = "buttonBar">
-          <button class = "demo" value = "redDudeGame" autofocus="true">Red Dude: Game Demo</button>
-          <button class = "demo" value = "tetrisVideo">Tetris Natures: Game Video</button>
-          <button class = "demo" value = "calculatorVideo">Calculator: App Video</button>
 
-          <button id = "check">Check</button>
-
+        <div id = "redDudeDiv">
+          <h3>Red Dude</h3>
+          <iframe id="redDudeGame" class = "game" width="850" height="620" src="redDude.html" frameborder="0" allowfullscreen scrolling="no"></iframe>
         </div>
 
-        <iframe id="redDudeGame" class = "game" width="850" height="620" style = "display:none" src="redDude.html" frameborder="0" allowfullscreen scrolling="no"></iframe>
+        <div id = "iosVideos">
+          <div>
+            <h4>Tetris Natures</h4>
+            <iframe id="tetrisVideo" class = "video" width="560" height="315" src="https://www.youtube.com/embed/BjFh6KT7yAw" frameborder="0"  allowfullscreen allowscriptaccess="always"></iframe>
+          </div>
 
-        <iframe id="tetrisVideo" class = "video" width="560" height="315" src="https://www.youtube.com/embed/BjFh6KT7yAw?enablejsapi=1" frameborder="0"  allowfullscreen allowscriptaccess="always"></iframe>
-
-        <iframe id="calculatorVideo" class = "video" width="560" height="315" style = "display:none" src="https://www.youtube.com/embed/mh2IxRj8zN0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+          <div>
+            <h4>Calculator</h4>
+            <iframe id="calculatorVideo" class = "video" width="560" height="315" src="https://www.youtube.com/embed/mh2IxRj8zN0" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
 
       </div>
 

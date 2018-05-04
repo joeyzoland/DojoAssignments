@@ -9,8 +9,7 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  background-color: #f5f5dc;
-  /*margin-bottom: 10px;*/
+  background-color: #e6e6e6;
 }
 .header_name{
   display: inline-block;
@@ -27,10 +26,8 @@
 #picture_summary{
   text-align: center;
   padding: 100px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #899389;
-  background: radial-gradient(#9c9c9c, #838383);
+  background: radial-gradient(#7fc8ff, #0092ff);
+  color: black;
 }
 #picture_summary h1{
   font-size: 50px;
@@ -43,42 +40,41 @@
   padding-right: 20%;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: white;
-}
-#text_summary h1{
-  margin-top: 0px;
+  background: radial-gradient(#ffc17f, #ff8300);
+  color: black;
 }
 #text_summary button{
   height: 32px;
   width: 100px;
   font-weight: bold;
 }
+#text_summary h1{
+  margin-top: 0px;
+}
 #projects_summary{
   padding: 100px;
-  color: #cccccc;
-  text-align: center;
-  background-color: #4c4c4c;
-}
-#buttonBar {
-  display: block;
-}
-#buttonBar button{
+  /*color: #cccccc;*/
+  /*color: #a9a9a9;*/
   color: black;
-  background-color: #cccccc;
-  border-color: black;
-  padding: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  text-align: center;
+  background: radial-gradient(#9975b9, #663096);
 }
-#projects_summary iframe{
-  display: block;
+#projects_summary div{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 #projects_summary h1{
   text-decoration: underline;
+  margin-top: 0px;
+}
+#redDudeDiv{
+  margin-top: 40px;
+}
+#iosVideos div{
+  display: inline-block;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
 }
 /*#calculatorVideo{
   height: 620px;
@@ -91,9 +87,11 @@
 #contact_info{
   padding: 100px;
   text-align: center;
+  background: radial-gradient(#ffef99, #ffd700);
+  color: black;
+}
+#contact_info h1{
   margin-top: 0px;
-  margin-bottom: 0px;
-  background: radial-gradient(#f4ac66, #ee7600);
 }
 .btn{
   width: 80px;
